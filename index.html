@@ -52,8 +52,9 @@ footer{max-width:1600px;margin-left:auto;margin-right:auto;}
 ::selection{background:var(--accent);color:#fff;}
 
 /* CUSTOM CURSOR */
-#cursor{position:fixed;width:10px;height:10px;background:var(--accent);border-radius:50%;pointer-events:none;z-index:9999;transform:translate(-50%,-50%);transition:transform 0.15s ease,width 0.3s ease,height 0.3s ease,background 0.3s ease;mix-blend-mode:multiply;}
-#cursor-ring{position:fixed;width:36px;height:36px;border:1px solid var(--accent);border-radius:50%;pointer-events:none;z-index:9998;transform:translate(-50%,-50%);transition:transform 0.08s ease,width 0.3s ease,height 0.3s ease,opacity 0.3s ease;opacity:0.5;}
+#cursor{position:fixed;width:10px;height:10px;background:var(--accent);border-radius:50%;pointer-events:none;z-index:9999;transform:translate(-50%,-50%);transition:transform 0.15s ease,width 0.3s ease,height 0.3s ease;}
+#cursor-ring{position:fixed;width:36px;height:36px;border:1px solid var(--ink);border-radius:50%;pointer-events:none;z-index:9998;transform:translate(-50%,-50%);transition:transform 0.08s ease,width 0.3s ease,height 0.3s ease,opacity 0.3s ease,border-color 0.3s;opacity:0.4;}
+[data-theme="dark"] #cursor-ring{border-color:var(--ink);opacity:0.6;}
 body:hover #cursor{opacity:1;}
 
 /* Additional styles */
