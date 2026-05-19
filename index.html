@@ -277,6 +277,12 @@ form{display:flex;flex-direction:column;gap:0;border:1px solid var(--border);bor
 .form-submit-text{font-family:var(--ui);font-size:12px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--ink);}
 .form-submit-arrow{width:40px;height:40px;background:var(--accent);border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-size:18px;transition:background 0.2s,transform 0.2s;}
 .form-submit:hover .form-submit-arrow{background:var(--ink);transform:translate(2px,-2px);}
+.form-privacy-row{padding:18px 20px;border-bottom:1px solid var(--border);}
+.form-privacy{display:flex;align-items:flex-start;gap:12px;cursor:pointer;}
+.form-privacy input[type="checkbox"]{width:16px;height:16px;margin-top:3px;flex-shrink:0;accent-color:var(--accent);cursor:pointer;}
+.form-privacy-text{font-family:var(--body);font-size:14px;line-height:1.5;color:var(--ink2);}
+.form-privacy-link{color:var(--accent);text-decoration:underline;text-underline-offset:2px;transition:color 0.2s;}
+.form-privacy-link:hover{color:var(--ink);}
 
 /* FOOTER */
 footer{padding:24px 56px;border-top:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;}
@@ -794,6 +800,14 @@ footer{padding:24px 56px;border-top:1px solid var(--border);display:flex;align-i
           <textarea name="message"placeholder="Opisz swój projekt, budżet, terminy..."></textarea>
         </div>
       </div>
+      <div class="form-privacy-row">
+        <label class="form-privacy">
+          <input type="checkbox" name="privacy_policy" value="accepted" required>
+          <span class="form-privacy-text">
+            <span data-i18n="f.privacy.prefix">Akceptuję </span><a href="polityka-prywatnosci/" class="form-privacy-link" data-i18n="f.privacy.link">politykę prywatności</a>
+          </span>
+        </label>
+      </div>
       <button type="submit" class="form-submit">
         <span class="form-submit-text" data-i18n="f.send">Wyślij wiadomość</span>
         <svg class="arrow" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3 13L13 3M13 3H6M13 3V10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
@@ -883,7 +897,7 @@ pl:{'nav.work':'Realizacje','nav.services':'Usługi','nav.about':'O nas','nav.co
 'sec.contact':'Kontakt','ct.t1':'Zacznijmy','ct.t2':'razem.',
 'ct.desc':'Masz projekt? Napisz do nas. Odpowiadamy w ciągu 24 godzin i — jeśli projekt pasuje — ustalamy termin rozmowy jeszcze tego samego dnia.',
 'ct.email':'Email','ct.loc':'Lokalizacja','ct.locval':'Łódź, Polska','ct.avail':'Dostępność','ct.availval':'Otwarte na nowe projekty ✓',
-'f.name':'Imię i nazwisko','f.email':'Email','f.service':'Czego potrzebujesz?','f.message':'Opowiedz o projekcie','f.send':'Wyślij wiadomość',
+'f.name':'Imię i nazwisko','f.email':'Email','f.service':'Czego potrzebujesz?','f.message':'Opowiedz o projekcie','f.privacy.prefix':'Akceptuję ','f.privacy.link':'politykę prywatności','f.send':'Wyślij wiadomość',
 'ft.copy':'© 2025 HeritageStudio Studio','ft.work':'Realizacje','ft.serv':'Usługi','ft.contact':'Kontakt'},
 
 en:{'nav.work':'Work','nav.services':'Services','nav.about':'About','nav.contact':'Contact','nav.cta':'Get a quote',
@@ -926,7 +940,7 @@ en:{'nav.work':'Work','nav.services':'Services','nav.about':'About','nav.contact
 'sec.contact':'Contact','ct.t1':'Let\'s start','ct.t2':'together.',
 'ct.desc':'Have a project? Write to us. We reply within 24 hours and — if the project fits — we schedule a call the same day.',
 'ct.email':'Email','ct.loc':'Location','ct.locval':'Łódź, Poland','ct.avail':'Availability','ct.availval':'Open for new projects ✓',
-'f.name':'Full name','f.email':'Email','f.service':'What do you need?','f.message':'Tell us about your project','f.send':'Send message',
+'f.name':'Full name','f.email':'Email','f.service':'What do you need?','f.message':'Tell us about your project','f.privacy.prefix':'I accept the ','f.privacy.link':'privacy policy','f.send':'Send message',
 'ft.copy':'© 2025 HeritageStudio Studio','ft.work':'Work','ft.serv':'Services','ft.contact':'Contact'}
 };
 
