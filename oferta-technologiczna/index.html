@@ -1,0 +1,908 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Strony WWW dla firm technicznych — Michał Dziedzic</title>
+<meta name="description" content="Profesjonalna strona internetowa dla Twojej firmy elektrycznej, budowlanej lub wykończeniowej. Gotowa w 2 tygodnie. Od 1000 zł.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Syne:wght@400;500;600;700;800&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+:root{
+  --bg:#FAFAF8;
+  --ink:#0E0E0C;
+  --ink2:#5A5954;
+  --ink3:#A8A49E;
+  --accent:#D4522A;
+  --border:#E8E4DC;
+  --surface:#F2F0EB;
+  --display:'Playfair Display',serif;
+  --ui:'Syne',sans-serif;
+  --body:'Instrument Serif',serif;
+}
+[data-theme="dark"]{
+  --bg:#0E0E0C;
+  --ink:#F0EDE6;
+  --ink2:#A8A49E;
+  --ink3:#5A5954;
+  --border:#2A2A28;
+  --surface:#1A1A18;
+}
+html{scroll-behavior:smooth;}
+body{font-family:var(--ui);background:var(--bg);color:var(--ink);overflow-x:hidden;transition:background 0.3s,color 0.3s;}
+*{transition:background-color 0.3s,border-color 0.3s,color 0.3s;}
+::selection{background:var(--accent);color:#fff;}
+
+/* ─── NAV ─── */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;height:64px;background:rgba(250,250,248,0.96);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);}
+[data-theme="dark"] nav{background:rgba(14,14,12,0.96);}
+.nav-inner{max-width:1100px;margin:0 auto;padding:0 32px;height:100%;display:flex;align-items:center;justify-content:space-between;}
+.nav-logo{font-family:var(--display);font-size:16px;font-weight:700;color:var(--ink);text-decoration:none;letter-spacing:-0.02em;}
+.nav-logo em{font-style:italic;color:var(--accent);}
+.nav-right{display:flex;align-items:center;gap:12px;}
+.theme-toggle{width:32px;height:32px;border-radius:50%;border:1px solid var(--border);background:none;cursor:pointer;display:flex;align-items:center;justify-content:center;color:var(--ink2);}
+.theme-toggle:hover{border-color:var(--ink);color:var(--ink);}
+.theme-toggle svg{width:14px;height:14px;}
+.icon-sun,.icon-moon{display:none;}
+[data-theme="dark"] .icon-moon{display:block;}
+:not([data-theme="dark"]) .icon-sun{display:block;}
+.nav-cta{display:inline-flex;align-items:center;gap:6px;padding:9px 20px;background:var(--accent);color:#fff;font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;text-decoration:none;border-radius:2px;}
+.nav-cta:hover{background:#B8431F;}
+
+/* ─── SHARED ─── */
+.wrap{max-width:1100px;margin:0 auto;padding:0 32px;}
+.wrap-narrow{max-width:760px;margin:0 auto;padding:0 32px;}
+.wrap-mid{max-width:920px;margin:0 auto;padding:0 32px;}
+.eyebrow{font-size:12px;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;color:var(--accent);margin-bottom:14px;}
+.eyebrow-dark{font-size:12px;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;color:rgba(212,82,42,0.85);margin-bottom:14px;}
+.section-label{font-size:12px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--ink3);margin-bottom:12px;}
+.cta-btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:20px 44px;background:var(--accent);color:#fff;font-family:var(--ui);font-size:15px;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;text-decoration:none;border-radius:2px;border:none;cursor:pointer;width:100%;max-width:440px;}
+.cta-btn:hover{background:#B8431F;}
+.cta-btn svg{flex-shrink:0;}
+.cta-sub{font-size:14px;color:var(--ink3);margin-top:12px;text-align:center;}
+
+/* ─── HERO ─── */
+.hero{padding:100px 32px 0;text-align:center;position:relative;overflow:hidden;}
+.hero-shapes{position:absolute;inset:0;pointer-events:none;z-index:0;overflow:hidden;}
+.hero-content{position:relative;z-index:1;max-width:860px;margin:0 auto;}
+.availability{display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--ink2);border:1px solid var(--border);padding:9px 20px;border-radius:20px;margin-bottom:36px;background:var(--bg);}
+.avail-dot{width:7px;height:7px;border-radius:50%;background:#22C55E;flex-shrink:0;animation:pulse 2s infinite;}
+@keyframes pulse{0%,100%{opacity:1;}50%{opacity:0.4;}}
+.hero-title{font-family:var(--display);font-size:clamp(56px,8vw,112px);font-weight:900;letter-spacing:-0.03em;line-height:0.92;margin-bottom:32px;}
+.hero-title em{font-style:italic;color:var(--accent);}
+.hero-sub{font-family:var(--body);font-size:clamp(20px,2.2vw,26px);color:var(--ink2);line-height:1.6;max-width:640px;margin:0 auto 44px;}
+.hero-cta-wrap{display:flex;flex-direction:column;align-items:center;gap:0;}
+.hero-guarantee{display:flex;align-items:center;justify-content:center;gap:6px;font-size:12px;color:var(--ink3);margin-top:14px;}
+.hero-guarantee svg{color:var(--accent);}
+
+/* hero proof bar */
+.hero-proof{margin-top:56px;border-top:1px solid var(--border);display:grid;grid-template-columns:repeat(4,1fr);gap:0;}
+.proof-item{padding:28px 24px;border-right:1px solid var(--border);text-align:center;}
+.proof-item:last-child{border-right:none;}
+.proof-num{font-family:var(--display);font-size:48px;font-weight:900;letter-spacing:-0.02em;color:var(--ink);line-height:1;}
+.proof-num em{color:var(--accent);font-style:normal;}
+.proof-label{font-size:13px;color:var(--ink3);margin-top:6px;letter-spacing:0.04em;}
+
+/* hero visual — technical schematic bg */
+.hero-visual{margin-top:0;position:relative;overflow:hidden;}
+
+/* ─── PROBLEM STRIP ─── */
+.problem-strip{background:var(--ink);color:#fff;padding:80px 0;}
+.problem-strip .wrap-narrow{text-align:center;}
+.problem-strip h2{font-family:var(--display);font-size:clamp(36px,5vw,60px);font-weight:700;letter-spacing:-0.02em;line-height:1.1;margin-bottom:20px;color:#fff;}
+.problem-strip h2 em{font-style:italic;color:var(--accent);}
+.problem-strip p{font-family:var(--body);font-size:21px;line-height:1.7;color:rgba(255,255,255,0.55);margin-bottom:52px;}
+.problem-list{display:flex;flex-direction:column;gap:0;text-align:left;border:1px solid rgba(255,255,255,0.08);}
+.problem-row{display:grid;grid-template-columns:auto 1fr;gap:0;border-bottom:1px solid rgba(255,255,255,0.08);}
+.problem-row:last-child{border-bottom:none;}
+.problem-icon{padding:24px 28px;font-size:22px;border-right:1px solid rgba(255,255,255,0.08);}
+.problem-text{padding:24px 28px;}
+.problem-text strong{display:block;font-size:16px;font-weight:700;letter-spacing:0.02em;color:#fff;margin-bottom:6px;}
+.problem-text span{font-family:var(--body);font-size:17px;color:rgba(255,255,255,0.45);line-height:1.6;}
+
+/* ─── WHO I AM ─── */
+.who{padding:100px 0;}
+.who-inner{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;}
+.who-badge{display:inline-flex;flex-wrap:wrap;gap:8px;margin-top:28px;}
+.badge{font-size:10px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;padding:6px 12px;border:1px solid var(--border);border-radius:2px;color:var(--ink2);}
+.who h2{font-family:var(--display);font-size:clamp(40px,5vw,68px);font-weight:700;letter-spacing:-0.02em;line-height:1.05;margin-bottom:24px;}
+.who h2 em{font-style:italic;color:var(--accent);}
+.who p{font-family:var(--body);font-size:21px;line-height:1.75;color:var(--ink2);}
+.who-right{background:var(--surface);padding:40px;border:1px solid var(--border);}
+.who-right h3{font-family:var(--display);font-size:26px;font-weight:700;letter-spacing:-0.01em;margin-bottom:28px;}
+.who-point{display:flex;align-items:flex-start;gap:14px;padding:16px 0;border-bottom:1px solid var(--border);}
+.who-point:last-child{border-bottom:none;}
+.who-point-icon{width:32px;height:32px;background:var(--bg);border:1px solid var(--border);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:14px;flex-shrink:0;}
+.who-point-text strong{display:block;font-size:13px;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;color:var(--ink);margin-bottom:4px;}
+.who-point-text span{font-family:var(--body);font-size:17px;color:var(--ink2);line-height:1.55;}
+
+/* ─── VALUE STACK / OFFERS ─── */
+.offers{padding:100px 0;background:var(--surface);}
+.offers-header{text-align:center;margin-bottom:64px;}
+.offers-header h2{font-family:var(--display);font-size:clamp(40px,5vw,68px);font-weight:900;letter-spacing:-0.02em;line-height:1.0;margin-bottom:20px;}
+.offers-header h2 em{font-style:italic;color:var(--accent);}
+.offers-header p{font-family:var(--body);font-size:21px;color:var(--ink2);max-width:560px;margin:0 auto;}
+.offers-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;}
+.offer{background:var(--bg);display:flex;flex-direction:column;}
+.offer.best{background:var(--ink);color:#fff;}
+.offer-head{padding:32px 32px 24px;border-bottom:1px solid var(--border);}
+.offer.best .offer-head{border-color:rgba(255,255,255,0.1);}
+.offer-tag{font-size:9px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--accent);margin-bottom:10px;}
+.offer.best .offer-tag{color:rgba(212,82,42,0.85);}
+.offer-name{font-family:var(--display);font-size:30px;font-weight:700;letter-spacing:-0.01em;margin-bottom:6px;}
+.offer.best .offer-name{color:#fff;}
+.offer-tagline{font-family:var(--body);font-size:16px;color:var(--ink3);}
+.offer.best .offer-tagline{color:rgba(255,255,255,0.4);}
+.offer-body{padding:24px 32px;flex:1;}
+/* value stack */
+.value-stack{display:flex;flex-direction:column;gap:0;margin-bottom:24px;}
+.value-row{display:flex;justify-content:space-between;align-items:center;padding:12px 0;border-bottom:1px solid var(--border);font-size:16px;}
+.offer.best .value-row{border-color:rgba(255,255,255,0.07);}
+.value-row:last-child{border-bottom:none;}
+.value-item{display:flex;align-items:center;gap:8px;color:var(--ink2);}
+.offer.best .value-item{color:rgba(255,255,255,0.65);}
+.value-check{color:var(--accent);font-weight:700;font-size:14px;}
+.value-price{font-size:12px;font-weight:700;color:var(--ink3);text-decoration:line-through;flex-shrink:0;}
+.offer.best .value-price{color:rgba(255,255,255,0.25);}
+.stack-total{display:flex;justify-content:space-between;align-items:center;padding:14px 0;margin-top:4px;border-top:2px solid var(--border);}
+.offer.best .stack-total{border-color:rgba(255,255,255,0.15);}
+.stack-total-label{font-size:11px;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;color:var(--ink3);}
+.offer.best .stack-total-label{color:rgba(255,255,255,0.35);}
+.stack-total-val{font-size:14px;font-weight:700;color:var(--ink3);text-decoration:line-through;}
+.offer.best .stack-total-val{color:rgba(255,255,255,0.3);}
+.offer-price-wrap{padding:0 0 20px;text-align:center;}
+.offer-price{font-family:var(--display);font-size:64px;font-weight:900;letter-spacing:-0.02em;line-height:1;margin-bottom:6px;}
+.offer.best .offer-price{color:#fff;}
+.offer-price-note{font-size:13px;color:var(--ink3);}
+.offer.best .offer-price-note{color:rgba(255,255,255,0.35);}
+.offer-foot{padding:0 32px 32px;}
+.offer-btn{display:flex;align-items:center;justify-content:center;gap:8px;padding:14px 24px;background:var(--ink);color:var(--bg);font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;text-decoration:none;border-radius:2px;border:none;cursor:pointer;width:100%;}
+.offer.best .offer-btn{background:#fff;color:var(--ink);}
+.offer-btn:hover,.offer.best .offer-btn:hover{background:var(--accent);color:#fff;}
+.best-label{display:inline-flex;align-items:center;gap:6px;font-size:9px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;background:var(--accent);color:#fff;padding:5px 12px;border-radius:20px;margin-bottom:12px;}
+
+/* ─── PROCESS ─── */
+.process{padding:100px 0;}
+.process-header{text-align:center;margin-bottom:64px;}
+.process-header h2{font-family:var(--display);font-size:clamp(40px,5vw,64px);font-weight:700;letter-spacing:-0.02em;line-height:1.05;margin-bottom:16px;}
+.process-header h2 em{font-style:italic;color:var(--accent);}
+.process-header p{font-family:var(--body);font-size:21px;color:var(--ink2);}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border:1px solid var(--border);}
+.step{padding:36px 28px;border-right:1px solid var(--border);position:relative;}
+.step:last-child{border-right:none;}
+.step-num{font-family:var(--display);font-size:80px;font-weight:900;color:var(--border);line-height:1;margin-bottom:20px;}
+.step-title{font-size:15px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--ink);margin-bottom:12px;}
+.step-text{font-family:var(--body);font-size:18px;line-height:1.65;color:var(--ink2);}
+.step-time{display:inline-block;font-size:10px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--accent);border:1px solid rgba(212,82,42,0.25);padding:4px 10px;border-radius:20px;margin-top:12px;}
+
+/* ─── SOCIAL PROOF ─── */
+.proof{background:var(--ink);padding:100px 0;}
+.proof-header{text-align:center;margin-bottom:56px;}
+.proof-header h2{font-family:var(--display);font-size:clamp(36px,5vw,60px);font-weight:700;letter-spacing:-0.02em;line-height:1.05;color:#fff;margin-bottom:16px;}
+.proof-header h2 em{font-style:italic;color:var(--accent);}
+.proof-header p{font-family:var(--body);font-size:20px;color:rgba(255,255,255,0.4);}
+.testimonials{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;}
+.tcard{background:#1A1A18;padding:36px 32px;display:flex;flex-direction:column;}
+.tcard-stars{color:var(--accent);font-size:15px;letter-spacing:3px;margin-bottom:20px;}
+.tcard-text{font-family:var(--body);font-size:19px;line-height:1.75;color:rgba(255,255,255,0.65);flex:1;margin-bottom:28px;}
+.tcard-author{display:flex;align-items:center;gap:12px;padding-top:20px;border-top:1px solid rgba(255,255,255,0.07);}
+.tcard-avatar{width:40px;height:40px;border-radius:50%;background:var(--accent);display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;color:#fff;flex-shrink:0;}
+.tcard-name{font-size:15px;font-weight:700;color:#fff;}
+.tcard-role{font-size:14px;color:rgba(255,255,255,0.3);margin-top:2px;}
+
+/* ─── OBJECTIONS / FAQ ─── */
+.faq{padding:100px 0;}
+.faq-header{text-align:center;margin-bottom:56px;}
+.faq-header h2{font-family:var(--display);font-size:clamp(36px,5vw,60px);font-weight:700;letter-spacing:-0.02em;line-height:1.05;margin-bottom:16px;}
+.faq-header h2 em{font-style:italic;color:var(--accent);}
+.faq-header p{font-family:var(--body);font-size:20px;color:var(--ink2);}
+.faq-list{display:flex;flex-direction:column;gap:2px;}
+.faq-item{background:var(--surface);padding:0;}
+.faq-q{width:100%;text-align:left;padding:26px 32px;font-size:17px;font-weight:700;letter-spacing:0.01em;color:var(--ink);background:none;border:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:16px;}
+.faq-q:hover{color:var(--accent);}
+.faq-icon{width:20px;height:20px;border:1px solid var(--border);border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:14px;color:var(--ink3);transition:transform 0.3s;}
+.faq-item.open .faq-icon{transform:rotate(45deg);border-color:var(--accent);color:var(--accent);}
+.faq-a{display:none;padding:0 32px 28px;font-family:var(--body);font-size:18px;line-height:1.7;color:var(--ink2);}
+.faq-item.open .faq-a{display:block;}
+
+/* ─── FINAL CTA ─── */
+.final-cta{padding:120px 0;background:var(--surface);text-align:center;}
+.final-cta h2{font-family:var(--display);font-size:clamp(44px,6vw,88px);font-weight:900;letter-spacing:-0.03em;line-height:0.95;margin-bottom:24px;}
+.final-cta h2 em{font-style:italic;color:var(--accent);}
+.final-cta p{font-family:var(--body);font-size:22px;color:var(--ink2);max-width:560px;margin:0 auto 44px;}
+.risk-strip{display:flex;justify-content:center;gap:32px;flex-wrap:wrap;margin-top:40px;padding-top:40px;border-top:1px solid var(--border);}
+.risk-item{display:flex;align-items:center;gap:8px;font-size:15px;color:var(--ink2);}
+.risk-item svg{color:var(--accent);flex-shrink:0;}
+
+/* ─── CONTACT FORM ─── */
+.contact{padding:100px 0;}
+.contact-header{text-align:center;margin-bottom:56px;}
+.contact-header h2{font-family:var(--display);font-size:clamp(36px,5vw,60px);font-weight:700;letter-spacing:-0.02em;line-height:1.05;margin-bottom:16px;}
+.contact-header h2 em{font-style:italic;color:var(--accent);}
+.contact-header p{font-family:var(--body);font-size:20px;color:var(--ink2);}
+.form{border:1px solid var(--border);background:var(--bg);max-width:700px;margin:0 auto;}
+.form-row{display:grid;grid-template-columns:1fr 1fr;}
+.form-row.single{grid-template-columns:1fr;}
+.field{display:flex;flex-direction:column;padding:20px 24px;border-bottom:1px solid var(--border);border-right:1px solid var(--border);}
+.form-row .field:last-child{border-right:none;}
+.form-row.single .field{border-right:none;}
+.field label{font-size:9px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--ink3);margin-bottom:8px;}
+.field input,.field textarea,.field select{background:none;border:none;outline:none;font-family:var(--body);font-size:16px;color:var(--ink);resize:none;}
+.field textarea{min-height:100px;}
+.field input::placeholder,.field textarea::placeholder{color:var(--ink3);}
+.field select option{background:var(--bg);}
+.form-submit{width:100%;padding:20px 24px;background:var(--accent);color:#fff;font-family:var(--ui);font-size:12px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;border:none;cursor:pointer;display:flex;align-items:center;justify-content:space-between;}
+.form-submit:hover{background:#B8431F;}
+.form-submit svg{transition:transform 0.2s;}
+.form-submit:hover svg{transform:translate(4px,-4px);}
+
+/* ─── FOOTER ─── */
+footer{padding:28px 32px;border-top:1px solid var(--border);}
+.footer-inner{max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;}
+.footer-logo{font-family:var(--display);font-size:15px;font-weight:700;color:var(--ink);text-decoration:none;letter-spacing:-0.02em;}
+.footer-logo em{font-style:italic;color:var(--accent);}
+.footer-links{display:flex;gap:20px;}
+.footer-links a{font-size:12px;color:var(--ink3);text-decoration:none;}
+.footer-links a:hover{color:var(--accent);}
+.footer-copy{font-size:12px;color:var(--ink3);}
+
+/* ─── MOBILE ─── */
+@media(max-width:900px){
+  .who-inner{grid-template-columns:1fr;}
+  .offers-grid{grid-template-columns:1fr;}
+  .steps{grid-template-columns:1fr 1fr;}
+  .step:nth-child(2){border-right:none;}
+  .step:nth-child(3){border-top:1px solid var(--border);}
+  .testimonials{grid-template-columns:1fr;}
+  .hero-proof{grid-template-columns:repeat(2,1fr);}
+  .proof-item:nth-child(2){border-right:none;}
+  .proof-item:nth-child(3){border-top:1px solid var(--border);}
+  .form-row{grid-template-columns:1fr;}
+  .form-row .field{border-right:none;}
+  .risk-strip{gap:20px;}
+}
+@media(max-width:640px){
+  nav{height:60px;}
+  .nav-inner{padding:0 20px;}
+  .hero{padding:80px 20px 0;}
+  .wrap,.wrap-narrow,.wrap-mid{padding:0 20px;}
+  .who,.process,.faq,.contact,.final-cta,.proof{padding:70px 0;}
+  .offers{padding:70px 0;}
+  .steps{grid-template-columns:1fr;}
+  .step{border-right:none;border-top:1px solid var(--border);}
+  .step:first-child{border-top:none;}
+  footer{padding:20px;}
+  .footer-inner{flex-direction:column;text-align:center;}
+  .hero-proof{grid-template-columns:1fr 1fr;}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">Michał<em>Dziedzic</em></a>
+    <div class="nav-right">
+      <button class="theme-toggle" onclick="toggleTheme()" aria-label="Przełącz motyw">
+        <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+        <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M21 12.79A9 9 0 1 1 11.21 3a7 7 0 0 0 9.79 9.79z"/></svg>
+      </button>
+      <a href="#kontakt" class="nav-cta">Bezpłatna wycena →</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ══════════════════════════════════
+     HERO — Dream Outcome above the fold
+══════════════════════════════════ -->
+<section class="hero">
+  <div class="hero-shapes">
+    <svg width="100%" height="100%" viewBox="0 0 1600 700" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <pattern id="tg" width="60" height="60" patternUnits="userSpaceOnUse">
+          <path d="M60 0L0 0 0 60" fill="none" stroke="#1C1C1A" stroke-width="0.4" opacity="0.1"/>
+        </pattern>
+      </defs>
+      <rect width="100%" height="100%" fill="url(#tg)"/>
+      <!-- circuit top-right -->
+      <g opacity="0.15" stroke="#1C1C1A" stroke-width="1" fill="none">
+        <line x1="1100" y1="50" x2="1560" y2="50"/>
+        <line x1="1560" y1="50" x2="1560" y2="420"/>
+        <line x1="1100" y1="50" x2="1100" y2="150"/>
+        <line x1="1100" y1="150" x2="1200" y2="150"/>
+        <rect x="1215" y="138" width="56" height="24"/>
+        <line x1="1200" y1="150" x2="1215" y2="150"/>
+        <line x1="1271" y1="150" x2="1340" y2="150"/>
+        <circle cx="1200" cy="150" r="3" fill="#1C1C1A"/>
+        <line x1="1340" y1="150" x2="1340" y2="50"/>
+      </g>
+      <g opacity="0.3" stroke="#D4522A" stroke-width="1.2" fill="none">
+        <line x1="1340" y1="50" x2="1460" y2="50"/>
+        <line x1="1460" y1="50" x2="1460" y2="130"/>
+        <line x1="1440" y1="130" x2="1480" y2="130"/>
+        <line x1="1440" y1="144" x2="1480" y2="144"/>
+        <line x1="1460" y1="144" x2="1460" y2="210"/>
+        <line x1="1430" y1="210" x2="1490" y2="210"/>
+        <line x1="1438" y1="218" x2="1482" y2="218"/>
+        <line x1="1446" y1="226" x2="1474" y2="226"/>
+        <circle cx="1460" cy="50" r="4" fill="#D4522A" stroke="none"/>
+      </g>
+      <g opacity="0.18" stroke="#D4522A" stroke-width="0.8" fill="none">
+        <line x1="1510" y1="300" x2="1550" y2="300"/>
+        <line x1="1530" y1="280" x2="1530" y2="320"/>
+        <circle cx="1530" cy="300" r="11" stroke-width="0.7"/>
+      </g>
+      <!-- dimension lines bottom -->
+      <g opacity="0.09" stroke="#1C1C1A" stroke-width="0.8" fill="none">
+        <line x1="1200" y1="620" x2="1560" y2="620"/>
+        <line x1="1200" y1="614" x2="1200" y2="626"/>
+        <line x1="1560" y1="614" x2="1560" y2="626"/>
+      </g>
+      <text x="1310" y="613" font-family="monospace" font-size="8" fill="#1C1C1A" opacity="0.12" letter-spacing="1.5">230V / 50Hz</text>
+      <!-- left bracket -->
+      <path d="M50 90 L50 50 L110 50" fill="none" stroke="#D4522A" stroke-width="1" opacity="0.18"/>
+      <path d="M50 90 L50 50 L110 50" fill="none" stroke="#1C1C1A" stroke-width="0.5" opacity="0.1"/>
+      <!-- dashed signal line -->
+      <line x1="60" y1="650" x2="500" y2="650" stroke="#D4522A" stroke-width="0.8" stroke-dasharray="6,10" opacity="0.12"/>
+      <text x="62" y="644" font-family="monospace" font-size="8" fill="#D4522A" opacity="0.18" letter-spacing="1.5">L1 ─ ─ N ─ ─ PE</text>
+    </svg>
+  </div>
+
+  <div class="hero-content">
+    <div class="availability">
+      <span class="avail-dot"></span>
+      Dostępny dla nowych klientów — tylko 2 miejsca w tym miesiącu
+    </div>
+
+    <h1 class="hero-title">
+      Twoja firma techniczna<br>
+      zasługuje na stronę,<br>
+      która <em>przynosi zlecenia.</em>
+    </h1>
+
+    <p class="hero-sub">Projektuję i buduję strony dla firm z branży elektrycznej, budowlanej i wykończeniowej. Gotowe w 2 tygodnie. Bez żargonu. Bez pośredników.</p>
+
+    <div class="hero-cta-wrap">
+      <a href="#kontakt" class="cta-btn">
+        Chcę bezpłatną wycenę
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 13L13 3M13 3H6M13 3V10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+      <p class="cta-sub">✓ Odpowiadam w ciągu 24h &nbsp;·&nbsp; ✓ Wycena bez zobowiązań</p>
+    </div>
+  </div>
+
+  <div class="hero-proof wrap">
+    <div class="proof-item">
+      <div class="proof-num">2<em>+</em></div>
+      <div class="proof-label">Lata doświadczenia</div>
+    </div>
+    <div class="proof-item">
+      <div class="proof-num">10<em>+</em></div>
+      <div class="proof-label">Projektów ukończonych</div>
+    </div>
+    <div class="proof-item">
+      <div class="proof-num">2<em>tyg</em></div>
+      <div class="proof-label">Średni czas realizacji</div>
+    </div>
+    <div class="proof-item">
+      <div class="proof-num">0</div>
+      <div class="proof-label">Projektów niedostarczonych</div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════
+     PROBLEM — Agitate the pain
+══════════════════════════════════ -->
+<section class="problem-strip">
+  <div class="wrap-narrow">
+    <p class="eyebrow-dark">Problem</p>
+    <h2>Dobra robota nie sprzedaje się sama.<br><em>Niewidzialna firma — to bez sensu.</em></h2>
+    <p>Jeśli klient szuka elektryka, budowlańca lub ekipy wykończeniowej w Google — a Ciebie tam nie ma — nie istniejesz. Koniec. Zlecenie trafia do konkurencji.</p>
+    <div class="problem-list">
+      <div class="problem-row">
+        <div class="problem-icon">😤</div>
+        <div class="problem-text">
+          <strong>Żyjesz z poleceń, ale to się kończy</strong>
+          <span>Polecenia są nieprzewidywalne. Dobra strona działa 24/7 i przynosi nowych klientów nawet gdy jesteś na budowie.</span>
+        </div>
+      </div>
+      <div class="problem-row">
+        <div class="problem-icon">📉</div>
+        <div class="problem-text">
+          <strong>Konkurencja wygląda profesjonalniej — i zgarnia Twoje zlecenia</strong>
+          <span>Klient porównuje 3–5 firm. Jeśli Twoja strona wygląda przestarzale lub jej nie ma, tracisz go zanim jeszcze zadzwonił.</span>
+        </div>
+      </div>
+      <div class="problem-row">
+        <div class="problem-icon">🤦</div>
+        <div class="problem-text">
+          <strong>Agencje nie rozumieją Twojej branży</strong>
+          <span>Tłumaczysz im od zera co to rozdzielnica, BMS albo tynk mineralny. I tak wychodzi byle co. Przepłacasz za stronę z darmowego szablonu.</span>
+        </div>
+      </div>
+      <div class="problem-row">
+        <div class="problem-icon">⏳</div>
+        <div class="problem-text">
+          <strong>Nie masz czasu się tym zajmować</strong>
+          <span>Jesteś na budowie od 7 rano. Wiesz że potrzebujesz strony, ale nie masz kiedy się tym zająć — i odkładasz to od miesięcy.</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════
+     WHO AM I — Credibility
+══════════════════════════════════ -->
+<section class="who">
+  <div class="who-inner wrap">
+    <div>
+      <p class="eyebrow">Dlaczego ja</p>
+      <h2>Technik, który<br><em>pisze kod.</em></h2>
+      <p>Skończyłem technikum mechatroniczne, mam uprawnienia SEP do 1kV i certyfikaty zawodowe ELM.03 i ELM.06. Zanim zacząłem robić strony — byłem technikiem. Rozumiem Twoją pracę od środka.</p>
+      <p style="margin-top:16px;">Nie musisz mi tłumaczyć czym różni się instalacja elektryczna od słaboprądowej, ani co oznacza „pełna usługa wykończeniowa pod klucz". Wiem o czym mówisz — i wiem jak to sprzedać klientowi końcowemu na stronie.</p>
+      <div class="who-badge">
+        <span class="badge">⚡ SEP do 1kV</span>
+        <span class="badge">📋 ELM.03 · ELM.06</span>
+        <span class="badge">🎓 Technik mechatronik</span>
+        <span class="badge">💻 React · WordPress · Webflow</span>
+      </div>
+    </div>
+    <div class="who-right">
+      <h3>Co dostajesz, czego inni nie dają</h3>
+      <div class="who-point">
+        <div class="who-point-icon">🎯</div>
+        <div class="who-point-text">
+          <strong>Rozumiem Twoją branżę</strong>
+          <span>Opisuję Twoje usługi językiem który trafia do klientów końcowych — nie do innych techników.</span>
+        </div>
+      </div>
+      <div class="who-point">
+        <div class="who-point-icon">⚡</div>
+        <div class="who-point-text">
+          <strong>Jeden człowiek, zero pośredników</strong>
+          <span>Projektuję i koduję sam. Rozmawiasz ze mną, nie z account managerem który przekazuje dalej.</span>
+        </div>
+      </div>
+      <div class="who-point">
+        <div class="who-point-icon">📅</div>
+        <div class="who-point-text">
+          <strong>Gotowe w 2 tygodnie</strong>
+          <span>Nie czekasz miesiącami. Daję konkretny termin i go dotrzymuję.</span>
+        </div>
+      </div>
+      <div class="who-point">
+        <div class="who-point-icon">🔒</div>
+        <div class="who-point-text">
+          <strong>Płacisz po realizacji</strong>
+          <span>Przy prostszych projektach płacisz dopiero gdy zobaczysz gotową stronę. Zero ryzyka z Twojej strony.</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════
+     OFFERS — Value Stack
+══════════════════════════════════ -->
+<section class="offers" id="oferta">
+  <div class="wrap">
+    <div class="offers-header">
+      <p class="eyebrow">Oferta</p>
+      <h2>Wybierz pakiet.<br><em>Zacznij dostawać zlecenia.</em></h2>
+      <p>Każdy pakiet zawiera projekt UI/UX, kodowanie, wersję mobilną i podstawowe SEO. Bez ukrytych kosztów.</p>
+    </div>
+    <div class="offers-grid">
+
+      <!-- START -->
+      <div class="offer">
+        <div class="offer-head">
+          <div class="offer-tag">Pakiet Start</div>
+          <div class="offer-name">Strona One-Page</div>
+          <div class="offer-tagline">Idealna do startu — szybko, konkretnie</div>
+        </div>
+        <div class="offer-body">
+          <div class="value-stack">
+            <div class="value-row">
+              <span class="value-item"><span class="value-check">✓</span> Projekt UI/UX</span>
+              <span class="value-price">400 zł</span>
+            </div>
+            <div class="value-row">
+              <span class="value-item"><span class="value-check">✓</span> Kodowanie strony</span>
+              <span class="value-price">600 zł</span>
+            </div>
+            <div class="value-row">
+              <span class="value-item"><span class="value-check">✓</span> Wersja mobilna</span>
+              <span class="value-price">200 zł</span>
+            </div>
+            <div class="value-row">
+              <span class="value-item"><span class="value-check">✓</span> Formularz kontaktowy</span>
+              <span class="value-price">150 zł</span>
+            </div>
+            <div class="value-row">
+              <span class="value-item"><span class="value-check">✓</span> Podstawowe SEO</span>
+              <span class="value-price">200 zł</span>
+            </div>
+            <div class="value-row">
+              <span class="value-item"><span class="value-check">✓</span> Realizacja w 1–2 tyg.</span>
+              <span class="value-price">—</span>
+            </div>
+          </div>
+          <div class="stack-total">
+            <span class="stack-total-label">Wartość rynkowa</span>
+            <span class="stack-total-val">1 550 zł</span>
+          </div>
+          <div class="offer-price-wrap">
+            <div class="offer-price">1000 zł</div>
+            <div class="offer-price-note">jednorazowo · płatność po realizacji</div>
+          </div>
+        </div>
+        <div class="offer-foot">
+          <a href="#kontakt" class="offer-btn">Wybieram Start →</a>
+        </div>
+      </div>
+
+      <!-- PRO — best -->
+      <div class="offer best">
+        <div class="offer-head">
+          <div class="best-label">⭐ Najpopularniejszy</div>
+          <div class="offer-tag">Pakiet Pro</div>
+          <div class="offer-name">Strona Firmowa</div>
+          <div class="offer-tagline">Pełna prezentacja firmy, wiele podstron</div>
+        </div>
+        <div class="offer-body">
+          <div class="value-stack">
+            <div class="value-row">
+              <span class="value-item"><span class="value-check">✓</span> Projekt UI/UX (pełny)</span>
+              <span class="value-price">700 zł</span>
+            </div>
+            <div class="value-row">
+              <span class="value-item"><span class="value-check">✓</span> Wiele podstron</span>
+              <span class="value-price">800 zł</span>
+            </div>
+            <div class="value-row">
+              <span class="value-item"><span class="value-check">✓</span> Panel CMS (edytujesz sam)</span>
+              <span class="value-price">500 zł</span>
+            </div>
+            <div class="value-row">
+              <span class="value-item"><span class="value-check">✓</span> Galeria realizacji</span>
+              <span class="value-price">300 zł</span>
+            </div>
+            <div class="value-row">
+              <span class="value-item"><span class="value-check">✓</span> Rozbudowane SEO</span>
+              <span class="value-price">400 zł</span>
+            </div>
+            <div class="value-row">
+              <span class="value-item"><span class="value-check">✓</span> Realizacja w 2–3 tyg.</span>
+              <span class="value-price">—</span>
+            </div>
+          </div>
+          <div class="stack-total">
+            <span class="stack-total-label">Wartość rynkowa</span>
+            <span class="stack-total-val">2 700 zł</span>
+          </div>
+          <div class="offer-price-wrap">
+            <div class="offer-price">2000 zł</div>
+            <div class="offer-price-note">płatność etapami · 50% na start</div>
+          </div>
+        </div>
+        <div class="offer-foot">
+          <a href="#kontakt" class="offer-btn">Wybieram Pro →</a>
+        </div>
+      </div>
+
+      <!-- REFRESH -->
+      <div class="offer">
+        <div class="offer-head">
+          <div class="offer-tag">Pakiet Refresh</div>
+          <div class="offer-name">Ulepszenie strony</div>
+          <div class="offer-tagline">Masz stronę, ale nie przynosi efektów?</div>
+        </div>
+        <div class="offer-body">
+          <div class="value-stack">
+            <div class="value-row">
+              <span class="value-item"><span class="value-check">✓</span> Audyt istniejącej strony</span>
+              <span class="value-price">200 zł</span>
+            </div>
+            <div class="value-row">
+              <span class="value-item"><span class="value-check">✓</span> Poprawa wyglądu i UX</span>
+              <span class="value-price">400 zł</span>
+            </div>
+            <div class="value-row">
+              <span class="value-item"><span class="value-check">✓</span> Przyspieszenie ładowania</span>
+              <span class="value-price">200 zł</span>
+            </div>
+            <div class="value-row">
+              <span class="value-item"><span class="value-check">✓</span> Naprawa błędów mobilnych</span>
+              <span class="value-price">150 zł</span>
+            </div>
+            <div class="value-row">
+              <span class="value-item"><span class="value-check">✓</span> Poprawki SEO</span>
+              <span class="value-price">200 zł</span>
+            </div>
+            <div class="value-row">
+              <span class="value-item"><span class="value-check">✓</span> Realizacja od 3 dni</span>
+              <span class="value-price">—</span>
+            </div>
+          </div>
+          <div class="stack-total">
+            <span class="stack-total-label">Wartość rynkowa</span>
+            <span class="stack-total-val">1 150 zł</span>
+          </div>
+          <div class="offer-price-wrap">
+            <div class="offer-price">500 zł</div>
+            <div class="offer-price-note">wycena po audycie · bez zobowiązań</div>
+          </div>
+        </div>
+        <div class="offer-foot">
+          <a href="#kontakt" class="offer-btn">Zamawiam audyt →</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════
+     PROCESS — Reduce friction
+══════════════════════════════════ -->
+<section class="process">
+  <div class="wrap">
+    <div class="process-header">
+      <p class="eyebrow">Jak to działa</p>
+      <h2>Od rozmowy do<br><em>gotowej strony w 4 krokach.</em></h2>
+      <p>Proces jest prosty i nie wymaga od Ciebie żadnej wiedzy technicznej.</p>
+    </div>
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">01</div>
+        <div class="step-title">Wycena</div>
+        <div class="step-text">Wypełniasz formularz lub piszesz SMS. Odpowiadam z pytaniami i wyceną w ciągu 24h — bezpłatnie i bez zobowiązań.</div>
+        <span class="step-time">Dzień 1</span>
+      </div>
+      <div class="step">
+        <div class="step-num">02</div>
+        <div class="step-title">Projekt</div>
+        <div class="step-text">Przygotowuję projekt wizualny. Widzisz jak strona będzie wyglądać zanim cokolwiek zostanie zakodowane. Wprowadzam poprawki.</div>
+        <span class="step-time">Dni 2–5</span>
+      </div>
+      <div class="step">
+        <div class="step-num">03</div>
+        <div class="step-title">Kodowanie</div>
+        <div class="step-text">Buduję stronę. Na bieżąco informuję o postępach. Możesz śledzić efekty na żywo — bez czekania na „finał".</div>
+        <span class="step-time">Dni 5–12</span>
+      </div>
+      <div class="step">
+        <div class="step-num">04</div>
+        <div class="step-title">Wdrożenie</div>
+        <div class="step-text">Uruchamiamy stronę. Tłumaczę jak z niej korzystać. Zostaję dostępny po wdrożeniu — nie znikam po odbiorze płatności.</div>
+        <span class="step-time">Dzień 14</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════
+     SOCIAL PROOF — Testimonials
+══════════════════════════════════ -->
+<section class="proof">
+  <div class="wrap">
+    <div class="proof-header">
+      <p class="eyebrow-dark">Opinie klientów</p>
+      <h2>Oni już<br><em>mają stronę, która działa.</em></h2>
+      <p>Prawdziwe opinie od firm z branż technicznych.</p>
+    </div>
+    <div class="testimonials">
+      <div class="tcard">
+        <div class="tcard-stars">★★★★★</div>
+        <p class="tcard-text">„Strona gotowa w 10 dni, dokładnie tak jak prosiłem. Pierwsze zapytanie przez formularz przyszło w tym samym tygodniu co wdrożenie."</p>
+        <div class="tcard-author">
+          <div class="tcard-avatar">MK</div>
+          <div>
+            <div class="tcard-name">Marek K.</div>
+            <div class="tcard-role">Firma elektryczna · woj. łódzkie</div>
+          </div>
+        </div>
+      </div>
+      <div class="tcard">
+        <div class="tcard-stars">★★★★★</div>
+        <p class="tcard-text">„Nie trzeba było mu tłumaczyć co robimy. Sam zadał właściwe pytania i od razu wiedział jak to opisać. Inni tego nie potrafili."</p>
+        <div class="tcard-author">
+          <div class="tcard-avatar">PW</div>
+          <div>
+            <div class="tcard-name">Piotr W.</div>
+            <div class="tcard-role">Firma wykończeniowa · Łódź</div>
+          </div>
+        </div>
+      </div>
+      <div class="tcard">
+        <div class="tcard-stars">★★★★★</div>
+        <p class="tcard-text">„Miałem starą stronę z 2015 roku. Odświeżył ją szybko i w rozsądnej cenie. Teraz nie wstydzę się jej pokazać na budowie klientowi."</p>
+        <div class="tcard-author">
+          <div class="tcard-avatar">TN</div>
+          <div>
+            <div class="tcard-name">Tomasz N.</div>
+            <div class="tcard-role">Firma budowlana · woj. mazowieckie</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════
+     FAQ — Kill objections
+══════════════════════════════════ -->
+<section class="faq">
+  <div class="wrap-mid">
+    <div class="faq-header">
+      <p class="eyebrow">Częste pytania</p>
+      <h2>Masz wątpliwości?<br><em>Tutaj znajdziesz odpowiedź.</em></h2>
+      <p>Zebrałem pytania które słyszę najczęściej. Jeśli Twojego tu nie ma — napisz, odpowiem w ciągu dnia.</p>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          Nie mam czasu się tym zajmować — ile czasu musisz ode mnie?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">Minimum. Potrzebuję od Ciebie: opisu firmy (możesz mówić, ja notuję), kilku zdjęć realizacji jeśli masz, i 2–3 odpowiedzi na moje pytania mailowo. Resztą zajmuję się ja. Łącznie zajmuje Ci to góra 2–3 godziny — rozłożone na 2 tygodnie.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          Ile dokładnie będzie kosztować moja strona?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">Ceny w ofercie to stawki minimalne. Ostateczna cena zależy od zakresu — liczby podstron, funkcji, ilości treści. Napisz do mnie, a w ciągu 24h dostaniesz konkretną wycenę. Bezpłatnie, bez zobowiązań.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          Czy muszę mieć domenę i hosting? To skomplikowane?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">Nie musisz nic wiedzieć o domenach i hostingu. Powiem Ci dokładnie co kupić, gdzie i za ile (zwykle 100–200 zł/rok). Skonfiguruję wszystko za Ciebie.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          Czy będę mógł sam edytować stronę po oddaniu?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">W pakiecie Pro wbuduję panel WordPress — możesz sam dodawać aktualności, zdjęcia realizacji, zmieniać tekst. Bez wiedzy technicznej. Pokażę Ci jak to działa przy odbiorze.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          A jeśli strona mi się nie spodoba?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">Zanim zacznę kodować — przygotowuję projekt graficzny do Twojej akceptacji. Wprowadzam poprawki bezpłatnie. Jeśli projekt Ci nie odpowiada, nie płacisz za kodowanie. Twoje ryzyko to zero.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          Czy obsługujesz firmy spoza Łodzi?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">Tak, pracuję z klientami z całej Polski zdalnie — przez telefon, maila, Messenger. Nie musisz nigdzie przyjeżdżać ani mnie zapraszać na budowę.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════
+     FINAL CTA — Urgency + risk reversal
+══════════════════════════════════ -->
+<section class="final-cta">
+  <div class="wrap-narrow">
+    <p class="eyebrow">Ostatni krok</p>
+    <h2>Każdy miesiąc bez strony<br>to <em>zlecenia dla konkurencji.</em></h2>
+    <p>Twoja firma zasługuje na obecność w internecie, która pracuje dla Ciebie — nie na odwrót. Zacznijmy rozmowę.</p>
+    <div style="display:flex;flex-direction:column;align-items:center;">
+      <a href="#kontakt" class="cta-btn">
+        Chcę bezpłatną wycenę teraz
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 13L13 3M13 3H6M13 3V10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+      <p class="cta-sub">Odpowiadam w ciągu 24h · Wycena bezpłatna i bez zobowiązań</p>
+    </div>
+    <div class="risk-strip">
+      <div class="risk-item">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M13 4L6.5 11 3 7.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        Płatność po realizacji (mniejsze pakiety)
+      </div>
+      <div class="risk-item">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M13 4L6.5 11 3 7.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        Projekt do akceptacji przed kodowaniem
+      </div>
+      <div class="risk-item">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M13 4L6.5 11 3 7.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        Dostępny po wdrożeniu — nie znikam
+      </div>
+      <div class="risk-item">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M13 4L6.5 11 3 7.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        Gwarancja terminu realizacji
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════
+     CONTACT FORM
+══════════════════════════════════ -->
+<section class="contact" id="kontakt">
+  <div class="wrap-narrow">
+    <div class="contact-header">
+      <p class="eyebrow">Kontakt</p>
+      <h2>Napisz.<br><em>Odpiszę dziś lub jutro.</em></h2>
+      <p>Opisz firmę i czego potrzebujesz. Dostaniesz konkretną wycenę — nie szablon odpowiedzi z bota.</p>
+    </div>
+    <form class="form" action="https://formspree.io/f/TWOJ_ID" method="POST">
+      <div class="form-row">
+        <div class="field">
+          <label>Imię i nazwisko</label>
+          <input type="text" name="name" required placeholder="Jan Kowalski">
+        </div>
+        <div class="field">
+          <label>Telefon lub email</label>
+          <input type="text" name="contact" required placeholder="601 234 567">
+        </div>
+      </div>
+      <div class="form-row single">
+        <div class="field">
+          <label>Czego potrzebujesz?</label>
+          <select name="service">
+            <option value="">Wybierz pakiet...</option>
+            <option>Strona One-Page (od 1000 zł)</option>
+            <option>Strona Firmowa (od 2000 zł)</option>
+            <option>Ulepszenie istniejącej strony (od 500 zł)</option>
+            <option>Nie wiem jeszcze — potrzebuję doradztwa</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-row single">
+        <div class="field">
+          <label>Opisz swoją firmę (kilka zdań wystarczy)</label>
+          <textarea name="message" placeholder="Czym się zajmujesz, na jakim terenie, co chcesz osiągnąć stroną..."></textarea>
+        </div>
+      </div>
+      <button type="submit" class="form-submit">
+        <span>Wyślij — odezwę się w ciągu 24h</span>
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 13L13 3M13 3H6M13 3V10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+    </form>
+    <p style="text-align:center;font-size:12px;color:var(--ink3);margin-top:16px;">lub napisz bezpośrednio: <a href="mailto:kontakt@michaldziedzic.com" style="color:var(--ink2);text-decoration:none;">kontakt@michaldziedzic.com</a></p>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <a href="index.html" class="footer-logo">Michał<em>Dziedzic</em></a>
+    <div class="footer-links">
+      <a href="polityka-prywatnosci.html">Polityka prywatności</a>
+      <a href="index.html">Strona główna</a>
+    </div>
+    <p class="footer-copy">© 2025 Michał Dziedzic</p>
+  </div>
+</footer>
+
+<script>
+function toggleTheme(){
+  const h=document.documentElement;
+  const dark=h.getAttribute('data-theme')==='dark';
+  h.setAttribute('data-theme',dark?'light':'dark');
+  localStorage.setItem('theme',dark?'light':'dark');
+}
+(function(){
+  const s=localStorage.getItem('theme');
+  if(s)document.documentElement.setAttribute('data-theme',s);
+})();
+
+function toggleFaq(btn){
+  const item=btn.parentElement;
+  const isOpen=item.classList.contains('open');
+  document.querySelectorAll('.faq-item.open').forEach(i=>i.classList.remove('open'));
+  if(!isOpen)item.classList.add('open');
+}
+</script>
+</body>
+</html>
