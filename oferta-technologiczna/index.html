@@ -4,14 +4,10 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Strony WWW dla firm technicznych — Michał Dziedzic</title>
-<meta name="description" content="Profesjonalna strona internetowa dla Twojej firmy elektrycznej, budowlanej lub wykończeniowej. Gotowa w 2 tygodnie. Od 1000 zł.">
+<meta name="description" content="Profesjonalna strona internetowa dla Twojej firmy elektrycznej, budowlanej lub wykończeniowej. Gotowa w 2 tygodnie. Od 1500 zł.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Syne:wght@400;500;600;700;800&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
-<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,
-<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'>
-<circle cx='50' cy='50' r='45' fill='%23ff7a00'/>
-</svg>">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
 :root{
@@ -42,6 +38,8 @@ body{font-family:var(--ui);background:var(--bg);color:var(--ink);overflow-x:hidd
 /* ─── NAV ─── */
 nav{position:fixed;top:0;left:0;right:0;z-index:100;height:64px;background:rgba(250,250,248,0.96);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);}
 [data-theme="dark"] nav{background:rgba(14,14,12,0.96);}
+[data-theme="dark"] .problem-strip{background:#111110;}
+[data-theme="dark"] .proof{background:#111110;}
 .nav-inner{max-width:1100px;margin:0 auto;padding:0 32px;height:100%;display:flex;align-items:center;justify-content:space-between;}
 .nav-logo{font-family:var(--display);font-size:16px;font-weight:700;color:var(--ink);text-decoration:none;letter-spacing:-0.02em;}
 .nav-logo em{font-style:italic;color:var(--accent);}
@@ -52,7 +50,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;height:64px;background:rgba(
 .icon-sun,.icon-moon{display:none;}
 [data-theme="dark"] .icon-moon{display:block;}
 :not([data-theme="dark"]) .icon-sun{display:block;}
-.nav-cta{display:inline-flex;align-items:center;gap:6px;padding:9px 20px;background:var(--accent);color:#fff;font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;text-decoration:none;border-radius:2px;}
+.nav-cta{display:inline-flex;align-items:center;gap:6px;padding:10px 22px;background:var(--accent);color:#fff;font-size:12px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;text-decoration:none;border-radius:2px;}
 .nav-cta:hover{background:#B8431F;}
 
 /* ─── SHARED ─── */
@@ -70,11 +68,11 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;height:64px;background:rgba(
 /* ─── HERO ─── */
 .hero{padding:100px 32px 0;text-align:center;position:relative;overflow:hidden;}
 .hero-shapes{position:absolute;inset:0;pointer-events:none;z-index:0;overflow:hidden;}
-.hero-content{position:relative;z-index:1;max-width:1000px;margin:0 auto;}
+.hero-content{position:relative;z-index:1;max-width:1060px;margin:0 auto;}
 .availability{display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--ink2);border:1px solid var(--border);padding:9px 20px;border-radius:20px;margin-bottom:36px;background:var(--bg);}
 .avail-dot{width:7px;height:7px;border-radius:50%;background:#22C55E;flex-shrink:0;animation:pulse 2s infinite;}
 @keyframes pulse{0%,100%{opacity:1;}50%{opacity:0.4;}}
-.hero-title{font-family:var(--display);font-size:clamp(56px,8vw,112px);font-weight:900;letter-spacing:-0.03em;line-height:0.92;margin-bottom:32px;}
+.hero-title{font-family:var(--display);font-size:clamp(52px,7.5vw,100px);font-weight:900;letter-spacing:-0.03em;line-height:0.95;margin-bottom:32px;}
 .hero-title em{font-style:italic;color:var(--accent);}
 .hero-sub{font-family:var(--body);font-size:clamp(20px,2.2vw,26px);color:var(--ink2);line-height:1.6;max-width:640px;margin:0 auto 44px;}
 .hero-cta-wrap{display:flex;flex-direction:column;align-items:center;gap:0;}
@@ -101,26 +99,26 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;height:64px;background:rgba(
 .problem-list{display:flex;flex-direction:column;gap:0;text-align:left;border:1px solid rgba(255,255,255,0.08);}
 .problem-row{display:grid;grid-template-columns:auto 1fr;gap:0;border-bottom:1px solid rgba(255,255,255,0.08);}
 .problem-row:last-child{border-bottom:none;}
-.problem-icon{padding:24px 28px;font-size:22px;border-right:1px solid rgba(255,255,255,0.08);}
-.problem-text{padding:24px 28px;}
-.problem-text strong{display:block;font-size:16px;font-weight:700;letter-spacing:0.02em;color:#fff;margin-bottom:6px;}
-.problem-text span{font-family:var(--body);font-size:17px;color:rgba(255,255,255,0.45);line-height:1.6;}
+.problem-icon{padding:28px 32px;font-size:32px;border-right:1px solid rgba(255,255,255,0.08);}
+.problem-text{padding:28px 32px;}
+.problem-text strong{display:block;font-size:19px;font-weight:700;letter-spacing:0.01em;color:#fff;margin-bottom:8px;}
+.problem-text span{font-family:var(--body);font-size:19px;color:rgba(255,255,255,0.5);line-height:1.65;}
 
 /* ─── WHO I AM ─── */
 .who{padding:100px 0;}
 .who-inner{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;}
 .who-badge{display:inline-flex;flex-wrap:wrap;gap:8px;margin-top:28px;}
-.badge{font-size:10px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;padding:6px 12px;border:1px solid var(--border);border-radius:2px;color:var(--ink2);}
+.badge{font-size:12px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;padding:8px 16px;border:1px solid var(--border);border-radius:2px;color:var(--ink2);}
 .who h2{font-family:var(--display);font-size:clamp(40px,5vw,68px);font-weight:700;letter-spacing:-0.02em;line-height:1.05;margin-bottom:24px;}
 .who h2 em{font-style:italic;color:var(--accent);}
 .who p{font-family:var(--body);font-size:21px;line-height:1.75;color:var(--ink2);}
-.who-right{background:var(--surface);padding:40px;border:1px solid var(--border);}
-.who-right h3{font-family:var(--display);font-size:26px;font-weight:700;letter-spacing:-0.01em;margin-bottom:28px;}
-.who-point{display:flex;align-items:flex-start;gap:14px;padding:16px 0;border-bottom:1px solid var(--border);}
+.who-right{background:var(--surface);padding:48px;border:1px solid var(--border);}
+.who-right h3{font-family:var(--display);font-size:30px;font-weight:700;letter-spacing:-0.01em;margin-bottom:32px;}
+.who-point{display:flex;align-items:flex-start;gap:18px;padding:22px 0;border-bottom:1px solid var(--border);}
 .who-point:last-child{border-bottom:none;}
-.who-point-icon{width:32px;height:32px;background:var(--bg);border:1px solid var(--border);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:14px;flex-shrink:0;}
-.who-point-text strong{display:block;font-size:13px;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;color:var(--ink);margin-bottom:4px;}
-.who-point-text span{font-family:var(--body);font-size:17px;color:var(--ink2);line-height:1.55;}
+.who-point-icon{width:44px;height:44px;background:var(--bg);border:1px solid var(--border);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0;}
+.who-point-text strong{display:block;font-size:16px;font-weight:700;letter-spacing:0.05em;text-transform:uppercase;color:var(--ink);margin-bottom:8px;}
+.who-point-text span{font-family:var(--body);font-size:19px;color:var(--ink2);line-height:1.6;}
 
 /* ─── VALUE STACK / OFFERS ─── */
 .offers{padding:100px 0;background:var(--surface);}
@@ -133,7 +131,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;height:64px;background:rgba(
 .offer.best{background:var(--ink);color:#fff;}
 .offer-head{padding:32px 32px 24px;border-bottom:1px solid var(--border);}
 .offer.best .offer-head{border-color:rgba(255,255,255,0.1);}
-.offer-tag{font-size:9px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--accent);margin-bottom:10px;}
+.offer-tag{font-size:11px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--accent);margin-bottom:12px;}
 .offer.best .offer-tag{color:rgba(212,82,42,0.85);}
 .offer-name{font-family:var(--display);font-size:30px;font-weight:700;letter-spacing:-0.01em;margin-bottom:6px;}
 .offer.best .offer-name{color:#fff;}
@@ -152,7 +150,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;height:64px;background:rgba(
 .offer.best .value-price{color:rgba(255,255,255,0.25);}
 .stack-total{display:flex;justify-content:space-between;align-items:center;padding:14px 0;margin-top:4px;border-top:2px solid var(--border);}
 .offer.best .stack-total{border-color:rgba(255,255,255,0.15);}
-.stack-total-label{font-size:11px;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;color:var(--ink3);}
+.stack-total-label{font-size:13px;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;color:var(--ink3);}
 .offer.best .stack-total-label{color:rgba(255,255,255,0.35);}
 .stack-total-val{font-size:14px;font-weight:700;color:var(--ink3);text-decoration:line-through;}
 .offer.best .stack-total-val{color:rgba(255,255,255,0.3);}
@@ -165,7 +163,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;height:64px;background:rgba(
 .offer-btn{display:flex;align-items:center;justify-content:center;gap:8px;padding:14px 24px;background:var(--ink);color:var(--bg);font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;text-decoration:none;border-radius:2px;border:none;cursor:pointer;width:100%;}
 .offer.best .offer-btn{background:#fff;color:var(--ink);}
 .offer-btn:hover,.offer.best .offer-btn:hover{background:var(--accent);color:#fff;}
-.best-label{display:inline-flex;align-items:center;gap:6px;font-size:9px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;background:var(--accent);color:#fff;padding:5px 12px;border-radius:20px;margin-bottom:12px;}
+.best-label{display:inline-flex;align-items:center;gap:6px;font-size:11px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;background:var(--accent);color:#fff;padding:6px 14px;border-radius:20px;margin-bottom:14px;}
 
 /* ─── PROCESS ─── */
 .process{padding:100px 0;}
@@ -174,12 +172,12 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;height:64px;background:rgba(
 .process-header h2 em{font-style:italic;color:var(--accent);}
 .process-header p{font-family:var(--body);font-size:21px;color:var(--ink2);}
 .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border:1px solid var(--border);}
-.step{padding:36px 28px;border-right:1px solid var(--border);position:relative;}
+.step{padding:44px 36px;border-right:1px solid var(--border);position:relative;}
 .step:last-child{border-right:none;}
-.step-num{font-family:var(--display);font-size:80px;font-weight:900;color:var(--border);line-height:1;margin-bottom:20px;}
-.step-title{font-size:15px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--ink);margin-bottom:12px;}
-.step-text{font-family:var(--body);font-size:18px;line-height:1.65;color:var(--ink2);}
-.step-time{display:inline-block;font-size:10px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--accent);border:1px solid rgba(212,82,42,0.25);padding:4px 10px;border-radius:20px;margin-top:12px;}
+.step-num{font-family:var(--display);font-size:100px;font-weight:900;color:var(--border);line-height:1;margin-bottom:24px;}
+.step-title{font-size:17px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--ink);margin-bottom:14px;}
+.step-text{font-family:var(--body);font-size:20px;line-height:1.65;color:var(--ink2);}
+.step-time{display:inline-block;font-size:12px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--accent);border:1px solid rgba(212,82,42,0.25);padding:6px 14px;border-radius:20px;margin-top:16px;}
 
 /* ─── SOCIAL PROOF ─── */
 .proof{background:var(--ink);padding:100px 0;}
@@ -204,11 +202,11 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;height:64px;background:rgba(
 .faq-header p{font-family:var(--body);font-size:20px;color:var(--ink2);}
 .faq-list{display:flex;flex-direction:column;gap:2px;}
 .faq-item{background:var(--surface);padding:0;}
-.faq-q{width:100%;text-align:left;padding:26px 32px;font-size:17px;font-weight:700;letter-spacing:0.01em;color:var(--ink);background:none;border:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:16px;}
+.faq-q{width:100%;text-align:left;padding:28px 32px;font-family:var(--display);font-size:20px;font-weight:700;letter-spacing:-0.01em;color:var(--ink);background:none;border:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:16px;}
 .faq-q:hover{color:var(--accent);}
 .faq-icon{width:20px;height:20px;border:1px solid var(--border);border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:14px;color:var(--ink3);transition:transform 0.3s;}
 .faq-item.open .faq-icon{transform:rotate(45deg);border-color:var(--accent);color:var(--accent);}
-.faq-a{display:none;padding:0 32px 28px;font-family:var(--body);font-size:18px;line-height:1.7;color:var(--ink2);}
+.faq-a{display:none;padding:0 32px 28px;font-family:var(--body);font-size:19px;line-height:1.75;color:var(--ink2);}
 .faq-item.open .faq-a{display:block;}
 
 /* ─── FINAL CTA ─── */
@@ -281,13 +279,41 @@ footer{padding:28px 32px;border-top:1px solid var(--border);}
   .footer-inner{flex-direction:column;text-align:center;}
   .hero-proof{grid-template-columns:1fr 1fr;}
 }
+
+/* DARK MODE FIXES */
+[data-theme="dark"] .who-right{background:#1A1A18;border-color:#2A2A28;}
+[data-theme="dark"] .who-point-icon{background:#0E0E0C;border-color:#2A2A28;}
+[data-theme="dark"] .problem-list{border-color:#2A2A28;}
+[data-theme="dark"] .problem-row{border-color:#2A2A28;}
+[data-theme="dark"] .steps{border-color:#2A2A28;}
+[data-theme="dark"] .step{border-color:#2A2A28;}
+[data-theme="dark"] .faq-item{background:#1A1A18;}
+[data-theme="dark"] .faq-q{color:var(--ink);}
+[data-theme="dark"] .faq-icon{border-color:#2A2A28;color:var(--ink3);}
+[data-theme="dark"] .offer{background:#1A1A18;}
+[data-theme="dark"] .offer.best{background:#111110;}
+[data-theme="dark"] .offer-head{border-color:#2A2A28;}
+[data-theme="dark"] .value-row{border-color:#2A2A28;}
+[data-theme="dark"] .stack-total{border-color:#2A2A28;}
+[data-theme="dark"] .who-point{border-color:#2A2A28;}
+[data-theme="dark"] .step-num{color:#2A2A28;}
+[data-theme="dark"] .proof-item{border-color:#2A2A28;}
+[data-theme="dark"] .hero-proof{border-color:#2A2A28;}
+[data-theme="dark"] .availability{background:#1A1A18;border-color:#2A2A28;}
+[data-theme="dark"] .form{background:#1A1A18;border-color:#2A2A28;}
+[data-theme="dark"] .field{border-color:#2A2A28;}
+[data-theme="dark"] .offer-btn{background:var(--ink);color:var(--bg);}
+[data-theme="dark"] .offer-btn:hover{background:var(--accent);color:#fff;}
+[data-theme="dark"] nav{background:rgba(14,14,12,0.96);}
+[data-theme="dark"] .problem-strip{background:#111110;}
+[data-theme="dark"] .proof{background:#111110;}
 </style>
 </head>
 <body>
 
 <nav>
   <div class="nav-inner">
-    <a href="index.html" class="nav-logo">Michał<em>Dziedzic</em></a>
+    <a href="index.html" class="nav-logo">Heritage<em>Studio</em></a>
     <div class="nav-right">
       <button class="theme-toggle" onclick="toggleTheme()" aria-label="Przełącz motyw">
         <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
@@ -297,9 +323,7 @@ footer{padding:28px 32px;border-top:1px solid var(--border);}
     </div>
   </div>
 </nav>
-<!-- ══════════════════════════════════
-    Herigage Studio zyczy miłego podglądania kodu! ;)
-══════════════════════════════════ -->
+
 <!-- ══════════════════════════════════
      HERO — Dream Outcome above the fold
 ══════════════════════════════════ -->
@@ -359,7 +383,7 @@ footer{padding:28px 32px;border-top:1px solid var(--border);}
   <div class="hero-content">
     <div class="availability">
       <span class="avail-dot"></span>
-      Dostępny dla nowych klientów — tylko 2 miejsca w tym miesiącu
+      Dostępny dla nowych klientów
     </div>
 
     <h1 class="hero-title">
@@ -368,21 +392,21 @@ footer{padding:28px 32px;border-top:1px solid var(--border);}
       która <em>przynosi zlecenia.</em>
     </h1>
 
-    <p class="hero-sub">Projektuję i buduję strony dla firm z branży elektrycznej, budowlanej i wykończeniowej. Gotowe w 2 tygodnie. Bez żargonu. Bez pośredników.</p>
+    <p class="hero-sub">Projektujemy i budujemy strony dla firm z branży elektrycznej, budowlanej i wykończeniowej. Gotowe w 2 tygodnie. Bez żargonu. Bez pośredników.</p>
 
     <div class="hero-cta-wrap">
       <a href="#kontakt" class="cta-btn">
         Chcę bezpłatną wycenę
         <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 13L13 3M13 3H6M13 3V10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </a>
-      <p class="cta-sub">✓ Odpowiadam w ciągu 24h &nbsp;·&nbsp; ✓ Wycena bez zobowiązań</p>
+      <p class="cta-sub">✓ Odpowiadamy w ciągu 24h &nbsp;·&nbsp; ✓ Wycena bez zobowiązań</p>
     </div>
   </div>
 
   <div class="hero-proof wrap">
     <div class="proof-item">
-      <div class="proof-num">2<em>+</em></div>
-      <div class="proof-label">Lata doświadczenia</div>
+      <div class="proof-num">3<em>+</em></div>
+      <div class="proof-label">Lata na rynku</div>
     </div>
     <div class="proof-item">
       <div class="proof-num">10<em>+</em></div>
@@ -404,36 +428,35 @@ footer{padding:28px 32px;border-top:1px solid var(--border);}
 ══════════════════════════════════ -->
 <section class="problem-strip">
   <div class="wrap-narrow">
-    <p class="eyebrow-dark">Problem</p>
     <h2>Dobra robota nie sprzedaje się sama.<br><em>Niewidzialna firma — to bez sensu.</em></h2>
     <p>Jeśli klient szuka elektryka, budowlańca lub ekipy wykończeniowej w Google — a Ciebie tam nie ma — nie istniejesz. Koniec. Zlecenie trafia do konkurencji.</p>
     <div class="problem-list">
       <div class="problem-row">
         <div class="problem-icon">😤</div>
         <div class="problem-text">
-          <strong>Żyjesz z poleceń, ale to się kończy</strong>
-          <span>Polecenia są nieprzewidywalne. Dobra strona działa 24/7 i przynosi nowych klientów nawet gdy jesteś na budowie.</span>
+          <strong>Poleganie wyłącznie na poleceniach to ryzyko</strong>
+          <span>Polecenia to cenne źródło zleceń, ale nieprzewidywalne. Profesjonalna strona internetowa generuje zapytania stale — niezależnie od pory dnia i aktywności zespołu.</span>
         </div>
       </div>
       <div class="problem-row">
         <div class="problem-icon">📉</div>
         <div class="problem-text">
-          <strong>Konkurencja wygląda profesjonalniej — i zgarnia Twoje zlecenia</strong>
-          <span>Klient porównuje 3–5 firm. Jeśli Twoja strona wygląda przestarzale lub jej nie ma, tracisz go zanim jeszcze zadzwonił.</span>
+          <strong>Brak profesjonalnej strony to utracone zlecenia</strong>
+          <span>Klienci weryfikują wykonawców online zanim w ogóle zadzwonią. Przestarzała lub nieistniejąca strona eliminuje firmę z rozważań na samym początku procesu decyzyjnego.</span>
         </div>
       </div>
       <div class="problem-row">
         <div class="problem-icon">🤦</div>
         <div class="problem-text">
-          <strong>Agencje nie rozumieją Twojej branży</strong>
-          <span>Tłumaczysz im od zera co to rozdzielnica, BMS albo tynk mineralny. I tak wychodzi byle co. Przepłacasz za stronę z darmowego szablonu.</span>
+          <strong>Agencje bez wiedzy technicznej nie oddają charakteru Twojej pracy</strong>
+          <span>Większość agencji nie rozumie specyfiki branż technicznych. Efektem są generyczne strony, które nie komunikują realnej wartości i doświadczenia Twojej firmy.</span>
         </div>
       </div>
       <div class="problem-row">
         <div class="problem-icon">⏳</div>
         <div class="problem-text">
-          <strong>Nie masz czasu się tym zajmować</strong>
-          <span>Jesteś na budowie od 7 rano. Wiesz że potrzebujesz strony, ale nie masz kiedy się tym zająć — i odkładasz to od miesięcy.</span>
+          <strong>Czas jest cenniejszy niż koszt zlecenia strony</strong>
+          <span>Prowadzenie firmy zajmuje cały dzień. Budowa strony od zera, samodzielnie, to tygodnie pracy — które można przeznaczyć na realizację zleceń.</span>
         </div>
       </div>
     </div>
@@ -446,14 +469,14 @@ footer{padding:28px 32px;border-top:1px solid var(--border);}
 <section class="who">
   <div class="who-inner wrap">
     <div>
-      <p class="eyebrow">Dlaczego ja</p>
+      <p class="eyebrow">Dlaczego my</p>
       <h2>Technik, który<br><em>pisze kod.</em></h2>
-      <p>Skończyłem technikum mechatroniczne, mam uprawnienia SEP do 1kV i certyfikaty zawodowe ELM.03 i ELM.06. Zanim zacząłem robić strony — byłem technikiem. Rozumiem Twoją pracę od środka.</p>
-      <p style="margin-top:16px;">Nie musisz mi tłumaczyć czym różni się instalacja elektryczna od słaboprądowej, ani co oznacza „pełna usługa wykończeniowa pod klucz". Wiem o czym mówisz — i wiem jak to sprzedać klientowi końcowemu na stronie.</p>
+      <p>Posiadamy wykształcenie techniczne z dziedzin elektryki i mechatroniki. Rozumiemy specyfikę branż, dla których pracujemy — instalacje elektryczne, systemy BMS, roboty budowlane i wykończeniowe to dla nas znane pojęcia, nie żargon.</p>
+      <p style="margin-top:16px;">Nie tracisz czasu na tłumaczenie nam branżowych pojęć. Rozumiemy Twój zakres usług i wiemy, jak przekazać ich wartość klientom końcowym — językiem który trafia, a nie odpycha.</p>
       <div class="who-badge">
-        <span class="badge">⚡ SEP do 1kV</span>
-        <span class="badge">📋 ELM.03 · ELM.06</span>
-        <span class="badge">🎓 Technik mechatronik</span>
+        <span class="badge">⚡ Elektryka i instalacje</span>
+        <span class="badge">📋 Branża budowlana</span>
+        <span class="badge">🎓 Wykształcenie techniczne</span>
         <span class="badge">💻 React · WordPress · Webflow</span>
       </div>
     </div>
@@ -463,28 +486,28 @@ footer{padding:28px 32px;border-top:1px solid var(--border);}
         <div class="who-point-icon">🎯</div>
         <div class="who-point-text">
           <strong>Rozumiem Twoją branżę</strong>
-          <span>Opisuję Twoje usługi językiem który trafia do klientów końcowych — nie do innych techników.</span>
+          <span>Opisujemy Twoje usługi językiem który trafia do klientów końcowych — nie do innych techników.</span>
         </div>
       </div>
       <div class="who-point">
         <div class="who-point-icon">⚡</div>
         <div class="who-point-text">
           <strong>Jeden człowiek, zero pośredników</strong>
-          <span>Projektuję i koduję sam. Rozmawiasz ze mną, nie z account managerem który przekazuje dalej.</span>
+          <span>Projektujemy i kodujemy bez pośredników. Rozmawiasz bezpośrednio z osobą która robi Twoją stronę.</span>
         </div>
       </div>
       <div class="who-point">
         <div class="who-point-icon">📅</div>
         <div class="who-point-text">
           <strong>Gotowe w 2 tygodnie</strong>
-          <span>Nie czekasz miesiącami. Daję konkretny termin i go dotrzymuję.</span>
+          <span>Nie czekasz miesiącami. Dajemy konkretny termin i go dotrzymujemy.</span>
         </div>
       </div>
       <div class="who-point">
         <div class="who-point-icon">🔒</div>
         <div class="who-point-text">
-          <strong>Płacisz po realizacji</strong>
-          <span>Przy prostszych projektach płacisz dopiero gdy zobaczysz gotową stronę. Zero ryzyka z Twojej strony.</span>
+          <strong>Płatność w dwóch etapach</strong>
+          <span>50% zaliczki na starcie projektu, 50% po jego zakończeniu i akceptacji. Przejrzyste zasady, bez niespodzianek.</span>
         </div>
       </div>
     </div>
@@ -539,11 +562,11 @@ footer{padding:28px 32px;border-top:1px solid var(--border);}
           </div>
           <div class="stack-total">
             <span class="stack-total-label">Wartość rynkowa</span>
-            <span class="stack-total-val">1 550 zł</span>
+            <span class="stack-total-val">1 800 zł</span>
           </div>
           <div class="offer-price-wrap">
-            <div class="offer-price">1000 zł</div>
-            <div class="offer-price-note">jednorazowo · płatność po realizacji</div>
+            <div class="offer-price">1500 zł</div>
+            <div class="offer-price-note">płatność etapami · 50% na start</div>
           </div>
         </div>
         <div class="offer-foot">
@@ -588,10 +611,10 @@ footer{padding:28px 32px;border-top:1px solid var(--border);}
           </div>
           <div class="stack-total">
             <span class="stack-total-label">Wartość rynkowa</span>
-            <span class="stack-total-val">2 700 zł</span>
+            <span class="stack-total-val">2 900 zł</span>
           </div>
           <div class="offer-price-wrap">
-            <div class="offer-price">2000 zł</div>
+            <div class="offer-price">2500 zł</div>
             <div class="offer-price-note">płatność etapami · 50% na start</div>
           </div>
         </div>
@@ -666,25 +689,25 @@ footer{padding:28px 32px;border-top:1px solid var(--border);}
       <div class="step">
         <div class="step-num">01</div>
         <div class="step-title">Wycena</div>
-        <div class="step-text">Wypełniasz formularz lub piszesz SMS. Odpowiadam z pytaniami i wyceną w ciągu 24h — bezpłatnie i bez zobowiązań.</div>
+        <div class="step-text">Wypełniasz formularz. Odpowiadamy z pytaniami i wyceną w ciągu 24h — bezpłatnie i bez zobowiązań.</div>
         <span class="step-time">Dzień 1</span>
       </div>
       <div class="step">
         <div class="step-num">02</div>
         <div class="step-title">Projekt</div>
-        <div class="step-text">Przygotowuję projekt wizualny. Widzisz jak strona będzie wyglądać zanim cokolwiek zostanie zakodowane. Wprowadzam poprawki.</div>
+        <div class="step-text">Przygotowujemy projekt wizualny. Widzisz jak strona będzie wyglądać zanim cokolwiek zostanie zakodowane. Wprowadzamy poprawki.</div>
         <span class="step-time">Dni 2–5</span>
       </div>
       <div class="step">
         <div class="step-num">03</div>
         <div class="step-title">Kodowanie</div>
-        <div class="step-text">Buduję stronę. Na bieżąco informuję o postępach. Możesz śledzić efekty na żywo — bez czekania na „finał".</div>
+        <div class="step-text">Budujemy stronę. Na bieżąco informujemy o postępach. Możesz śledzić efekty na żywo — bez czekania na „finał".</div>
         <span class="step-time">Dni 5–12</span>
       </div>
       <div class="step">
         <div class="step-num">04</div>
         <div class="step-title">Wdrożenie</div>
-        <div class="step-text">Uruchamiamy stronę. Tłumaczę jak z niej korzystać. Zostaję dostępny po wdrożeniu — nie znikam po odbiorze płatności.</div>
+        <div class="step-text">Uruchamiamy stronę. Tłumaczymy jak z niej korzystać. Pozostajemy dostępni po wdrożeniu — nie znikamy po odbiorze płatności.</div>
         <span class="step-time">Dzień 14</span>
       </div>
     </div>
@@ -762,35 +785,35 @@ footer{padding:28px 32px;border-top:1px solid var(--border);}
           Ile dokładnie będzie kosztować moja strona?
           <span class="faq-icon">+</span>
         </button>
-        <div class="faq-a">Ceny w ofercie to stawki minimalne. Ostateczna cena zależy od zakresu — liczby podstron, funkcji, ilości treści. Napisz do mnie, a w ciągu 24h dostaniesz konkretną wycenę. Bezpłatnie, bez zobowiązań.</div>
+        <div class="faq-a">Ceny w ofercie to stawki minimalne. Ostateczna cena zależy od zakresu — liczby podstron, funkcji, ilości treści. Napisz do nas, a w ciągu 24h dostaniesz konkretną wycenę. Bezpłatnie, bez zobowiązań.</div>
       </div>
       <div class="faq-item">
         <button class="faq-q" onclick="toggleFaq(this)">
           Czy muszę mieć domenę i hosting? To skomplikowane?
           <span class="faq-icon">+</span>
         </button>
-        <div class="faq-a">Nie musisz nic wiedzieć o domenach i hostingu. Powiem Ci dokładnie co kupić, gdzie i za ile (zwykle 100–200 zł/rok). Skonfiguruję wszystko za Ciebie.</div>
+        <div class="faq-a">Nie musisz nic wiedzieć o domenach i hostingu. Powiemy Ci dokładnie co kupić, gdzie i za ile (zwykle 100–200 zł/rok). Skonfigurujemy wszystko za Ciebie.</div>
       </div>
       <div class="faq-item">
         <button class="faq-q" onclick="toggleFaq(this)">
           Czy będę mógł sam edytować stronę po oddaniu?
           <span class="faq-icon">+</span>
         </button>
-        <div class="faq-a">W pakiecie Pro wbuduję panel WordPress — możesz sam dodawać aktualności, zdjęcia realizacji, zmieniać tekst. Bez wiedzy technicznej. Pokażę Ci jak to działa przy odbiorze.</div>
+        <div class="faq-a">W pakiecie Pro wbudujemy panel WordPress — możesz sam dodawać aktualności, zdjęcia realizacji, zmieniać tekst. Bez wiedzy technicznej. Pokażemy Ci jak to działa przy odbiorze.</div>
       </div>
       <div class="faq-item">
         <button class="faq-q" onclick="toggleFaq(this)">
           A jeśli strona mi się nie spodoba?
           <span class="faq-icon">+</span>
         </button>
-        <div class="faq-a">Zanim zacznę kodować — przygotowuję projekt graficzny do Twojej akceptacji. Wprowadzam poprawki bezpłatnie. Jeśli projekt Ci nie odpowiada, nie płacisz za kodowanie. Twoje ryzyko to zero.</div>
+        <div class="faq-a">Zanim zaczniemy kodować — przygotowujemy projekt graficzny do Twojej akceptacji. Wprowadzamy poprawki bezpłatnie. Jeśli projekt Ci nie odpowiada, nie płacisz za kodowanie. Twoje ryzyko to zero.</div>
       </div>
       <div class="faq-item">
         <button class="faq-q" onclick="toggleFaq(this)">
           Czy obsługujesz firmy spoza Łodzi?
           <span class="faq-icon">+</span>
         </button>
-        <div class="faq-a">Tak, pracuję z klientami z całej Polski zdalnie — przez telefon, maila, Messenger. Nie musisz nigdzie przyjeżdżać ani mnie zapraszać na budowę.</div>
+        <div class="faq-a">Tak, pracujemy z klientami z całej Polski zdalnie — przez telefon, maila, Messenger. Nie musisz nigdzie przyjeżdżać.</div>
       </div>
     </div>
   </div>
@@ -809,12 +832,12 @@ footer{padding:28px 32px;border-top:1px solid var(--border);}
         Chcę bezpłatną wycenę teraz
         <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 13L13 3M13 3H6M13 3V10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </a>
-      <p class="cta-sub">Odpowiadam w ciągu 24h · Wycena bezpłatna i bez zobowiązań</p>
+      <p class="cta-sub">Odpowiadamy w ciągu 24h · Wycena bezpłatna i bez zobowiązań</p>
     </div>
     <div class="risk-strip">
       <div class="risk-item">
         <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M13 4L6.5 11 3 7.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        Płatność po realizacji (mniejsze pakiety)
+        Płatność etapami — 50% na start, 50% po akceptacji
       </div>
       <div class="risk-item">
         <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M13 4L6.5 11 3 7.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
@@ -822,7 +845,7 @@ footer{padding:28px 32px;border-top:1px solid var(--border);}
       </div>
       <div class="risk-item">
         <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M13 4L6.5 11 3 7.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        Dostępny po wdrożeniu — nie znikam
+        Dostępni po wdrożeniu — nie znikamy
       </div>
       <div class="risk-item">
         <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M13 4L6.5 11 3 7.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
@@ -839,8 +862,8 @@ footer{padding:28px 32px;border-top:1px solid var(--border);}
   <div class="wrap-narrow">
     <div class="contact-header">
       <p class="eyebrow">Kontakt</p>
-      <h2>Napisz.<br><em>Odpiszę dziś lub jutro.</em></h2>
-      <p>Opisz firmę i czego potrzebujesz. Dostaniesz konkretną wycenę — nie szablon odpowiedzi z bota.</p>
+      <h2>Napisz.<br><em>Odpowiadamy tak szybko jak to możliwe.</em></h2>
+      <p>Opisz firmę i czego potrzebujesz. Dostaniesz konkretną wycenę — nie szablon odpowiedzi z bota. Odpisujemy osobiście.</p>
     </div>
     <form class="form" action="https://formspree.io/f/TWOJ_ID" method="POST">
       <div class="form-row">
@@ -858,8 +881,8 @@ footer{padding:28px 32px;border-top:1px solid var(--border);}
           <label>Czego potrzebujesz?</label>
           <select name="service">
             <option value="">Wybierz pakiet...</option>
-            <option>Strona One-Page (od 1000 zł)</option>
-            <option>Strona Firmowa (od 2000 zł)</option>
+            <option>Strona One-Page (od 1500 zł)</option>
+            <option>Strona Firmowa (od 2500 zł)</option>
             <option>Ulepszenie istniejącej strony (od 500 zł)</option>
             <option>Nie wiem jeszcze — potrzebuję doradztwa</option>
           </select>
@@ -876,18 +899,18 @@ footer{padding:28px 32px;border-top:1px solid var(--border);}
         <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 13L13 3M13 3H6M13 3V10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </button>
     </form>
-    <p style="text-align:center;font-size:12px;color:var(--ink3);margin-top:16px;">lub napisz bezpośrednio: <a href="mailto:kontakt@michaldziedzic.com" style="color:var(--ink2);text-decoration:none;">kontakt@michaldziedzic.com</a></p>
+    <p style="text-align:center;font-size:12px;color:var(--ink3);margin-top:16px;">lub napisz bezpośrednio: <a href="mailto:michaldziedzic.work@gmail.com" style="color:var(--ink2);text-decoration:none;">michaldziedzic.work@gmail.com</a></p>
   </div>
 </section>
 
 <footer>
   <div class="footer-inner">
-    <a href="index.html" class="footer-logo">Michał<em>Dziedzic</em></a>
+    <a href="index.html" class="footer-logo">Heritage<em>Studio</em></a>
     <div class="footer-links">
-      <a href="polityka-prywatnosci.html">Polityka prywatności</a>
+      <a href="polityka-prywatnosci">Polityka prywatności</a>
       <a href="index.html">Strona główna</a>
     </div>
-    <p class="footer-copy">© 2025 Michał Dziedzic</p>
+    <p class="footer-copy">© 2025 HeritageStudio</p>
   </div>
 </footer>
 
