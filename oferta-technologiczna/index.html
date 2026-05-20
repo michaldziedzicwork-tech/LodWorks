@@ -44,7 +44,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;height:64px;background:rgba(
 [data-theme="dark"] nav{background:rgba(14,14,12,0.96);}
 [data-theme="dark"] .problem-strip{background:#111110;}
 [data-theme="dark"] .proof{background:#111110;}
-.nav-inner{max-width:1100px;margin:0 auto;padding:0 32px;height:100%;display:flex;align-items:center;justify-content:space-between;}
+.nav-inner{max-width:1200px;margin:0 auto;padding:0 32px;height:100%;display:flex;align-items:center;justify-content:space-between;}
 .nav-logo{font-family:var(--display);font-size:21px;font-weight:700;color:var(--ink);text-decoration:none;letter-spacing:-0.01em;}
 .nav-logo em{font-style:italic;color:var(--accent);}
 .nav-right{display:flex;align-items:center;gap:12px;}
@@ -58,9 +58,10 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;height:64px;background:rgba(
 .nav-cta:hover{background:#B8431F;}
 
 /* ─── SHARED ─── */
-.wrap{max-width:1100px;margin:0 auto;padding:0 32px;}
-.wrap-narrow{max-width:760px;margin:0 auto;padding:0 32px;}
-.wrap-mid{max-width:920px;margin:0 auto;padding:0 32px;}
+.wrap{max-width:1200px;margin:0 auto;padding:0 32px;}
+.wrap-narrow{max-width:860px;margin:0 auto;padding:0 32px;}
+.wrap-mid{max-width:1020px;margin:0 auto;padding:0 32px;}
+.hero .wrap{max-width:1100px;}
 .eyebrow{font-size:12px;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;color:var(--accent);margin-bottom:14px;}
 .eyebrow-dark{font-size:12px;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;color:rgba(212,82,42,0.85);margin-bottom:14px;}
 .section-label{font-size:12px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--ink3);margin-bottom:12px;}
@@ -95,18 +96,17 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;height:64px;background:rgba(
 .hero-visual{margin-top:0;position:relative;overflow:hidden;}
 
 /* ─── PROBLEM STRIP ─── */
-.problem-strip{background:var(--ink);color:#fff;padding:80px 0;}
+.problem-strip{background:var(--ink);color:#fff;padding:100px 0;}
 .problem-strip .wrap-narrow{text-align:center;}
-.problem-strip h2{font-family:var(--display);font-size:clamp(36px,5vw,60px);font-weight:700;letter-spacing:-0.02em;line-height:1.1;margin-bottom:20px;color:#fff;}
+.problem-strip h2{font-family:var(--display);font-size:clamp(40px,5.5vw,68px);font-weight:700;letter-spacing:-0.02em;line-height:1.1;margin-bottom:20px;color:#fff;}
 .problem-strip h2 em{font-style:italic;color:var(--accent);}
-.problem-strip p{font-family:var(--body);font-size:21px;line-height:1.7;color:rgba(255,255,255,0.55);margin-bottom:52px;}
-.problem-list{display:flex;flex-direction:column;gap:0;text-align:left;border:1px solid rgba(255,255,255,0.08);}
-.problem-row{display:grid;grid-template-columns:auto 1fr;gap:0;border-bottom:1px solid rgba(255,255,255,0.08);}
-.problem-row:last-child{border-bottom:none;}
-.problem-icon{padding:28px 32px;font-size:32px;border-right:1px solid rgba(255,255,255,0.08);}
-.problem-text{padding:28px 32px;}
-.problem-text strong{display:block;font-size:19px;font-weight:700;letter-spacing:0.01em;color:#fff;margin-bottom:8px;}
-.problem-text span{font-family:var(--body);font-size:19px;color:rgba(255,255,255,0.5);line-height:1.65;}
+.problem-intro{font-family:var(--body);font-size:23px;line-height:1.7;color:rgba(255,255,255,0.55);margin-bottom:64px;}
+.problem-list{display:flex;flex-direction:column;gap:0;text-align:left;max-width:800px;margin:0 auto;}
+.problem-card{padding:44px 0;border-bottom:1px solid rgba(255,255,255,0.08);display:flex;flex-direction:column;align-items:center;text-align:center;gap:16px;}
+.problem-card:first-child{border-top:1px solid rgba(255,255,255,0.08);}
+.problem-icon{font-size:32px;}
+.problem-title{font-family:var(--display);font-size:clamp(28px,3.5vw,42px);font-weight:700;letter-spacing:-0.02em;line-height:1.1;color:#fff;margin-bottom:14px;}
+.problem-desc{font-family:var(--body);font-size:21px;color:rgba(255,255,255,0.5);line-height:1.7;}
 
 /* ─── WHO I AM ─── */
 .who{padding:100px 0;}
@@ -244,7 +244,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;height:64px;background:rgba(
 
 /* ─── FOOTER ─── */
 footer{padding:28px 32px;border-top:1px solid var(--border);}
-.footer-inner{max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;}
+.footer-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;}
 .footer-logo{font-family:var(--display);font-size:15px;font-weight:700;color:var(--ink);text-decoration:none;letter-spacing:-0.02em;}
 .footer-logo em{font-style:italic;color:var(--accent);}
 .footer-links{display:flex;gap:20px;}
@@ -254,6 +254,7 @@ footer{padding:28px 32px;border-top:1px solid var(--border);}
 
 /* ─── MOBILE ─── */
 @media(max-width:900px){
+  .problem-list{grid-template-columns:1fr;}
   .who-inner{grid-template-columns:1fr;}
   .offers-grid{grid-template-columns:1fr;}
   .steps{grid-template-columns:1fr 1fr;}
@@ -286,8 +287,7 @@ footer{padding:28px 32px;border-top:1px solid var(--border);}
 /* DARK MODE FIXES */
 [data-theme="dark"] .who-right{background:#1A1A18;border-color:#2A2A28;}
 [data-theme="dark"] .who-point-icon{background:#0E0E0C;border-color:#2A2A28;}
-[data-theme="dark"] .problem-list{border-color:#2A2A28;}
-[data-theme="dark"] .problem-row{border-color:#2A2A28;}
+[data-theme="dark"] .problem-card{background:#0A0A08;}
 [data-theme="dark"] .steps{border-color:#2A2A28;}
 [data-theme="dark"] .step{border-color:#2A2A28;}
 [data-theme="dark"] .faq-item{background:#1A1A18;}
@@ -394,7 +394,7 @@ footer{padding:28px 32px;border-top:1px solid var(--border);}
     </div>
 
     <h1 class="hero-title">
-      Strony internetowa <br>
+      Strony internetowe <br>
       dla firm technicznych, <br>
       <em>przynoszące zlecenia.</em>
     </h1>
@@ -436,37 +436,41 @@ footer{padding:28px 32px;border-top:1px solid var(--border);}
 <section class="problem-strip">
   <div class="wrap-narrow">
     <h2>Ponad 70% klientów przychodzi przez stronę internetową<br><em>88% rezygnuje jeżeli nie wzbudza zaufania</em></h2>
-    <p>Profesjonalna strona to nie koszt — to inwestycja, która pracuje na zlecenia zanim Twoja ekipa wyjedzie na budowę.</p>
+    <p class="problem-intro">Profesjonalna strona to nie koszt — to inwestycja, która pracuje na zlecenia zanim Twoja ekipa wyjedzie na budowę.</p>
     <div class="problem-list">
-      <div class="problem-row">
-        <div class="problem-icon">😤</div>
-        <div class="problem-text">
-          <strong>Polecenia nie zapewniają stabilnego napływu zleceń</strong>
-          <span>Rekomendacje od dotychczasowych klientów są wartościowe, ale niewystarczające jako jedyne źródło pozyskiwania nowych kontraktów. Profesjonalna strona internetowa buduje stały, przewidywalny kanał zapytań.</span>
+
+      <div class="problem-card">
+        <span class="problem-icon">😤</span>
+        <div>
+          <div class="problem-title">Polecenia nie zapewniają stabilnego napływu zleceń</div>
+          <div class="problem-desc">Rekomendacje od dotychczasowych klientów są wartościowe, ale niewystarczające jako jedyne źródło pozyskiwania nowych kontraktów. Profesjonalna strona buduje stały, przewidywalny kanał zapytań.</div>
         </div>
       </div>
-      <div class="problem-row">
-        <div class="problem-icon">📉</div>
-        <div class="problem-text">
-          <strong>Klienci podejmują decyzje na podstawie pierwszego wrażenia</strong>
-          <span>Przed pierwszym kontaktem klient weryfikuje firmę w internecie. Brak strony lub niska jakość prezentacji online eliminuje firmę z procesu decyzyjnego — niezależnie od jakości wykonywanych usług.</span>
+
+      <div class="problem-card">
+        <span class="problem-icon">📉</span>
+        <div>
+          <div class="problem-title">Klienci podejmują decyzje na podstawie pierwszego wrażenia online</div>
+          <div class="problem-desc">Przed pierwszym kontaktem klient weryfikuje firmę w internecie. Brak strony lub niska jakość prezentacji online eliminuje firmę z procesu decyzyjnego — niezależnie od jakości wykonywanych usług.</div>
         </div>
       </div>
-      <div class="problem-row">
-        <div class="problem-icon">🤦</div>
-        <div class="problem-text">
-          <strong>Twórcy stron bez zaplecza technicznego nie rozumieją Twojej branży
-          </strong>
-          <span>Generyczne strony tworzone przez firmy bez znajomości specyfiki branż technicznych nie komunikują rzeczywistej wartości i kompetencji firmy. Efekt jest odwrotny do zamierzonego.</span>
+
+      <div class="problem-card">
+        <span class="problem-icon">🤦</span>
+        <div>
+          <div class="problem-title">Twórcy stron bez zaplecza technicznego nie rozumieją Twojej branży</div>
+          <div class="problem-desc">Generyczne strony tworzone bez znajomości specyfiki branż technicznych nie komunikują rzeczywistej wartości i kompetencji firmy. Efekt jest odwrotny do zamierzonego.</div>
         </div>
       </div>
-      <div class="problem-row">
-        <div class="problem-icon">⏳</div>
-        <div class="problem-text">
-          <strong>Brak zaufania ze strony klientów</strong>
-          <span>Dla nowego klienta firma bez profesjonalnej strony jest anonimowa. Zrealizowane projekty, opinie i historia firmy prezentowane online budują zaufanie jeszcze przed pierwszą rozmową.</span>
+
+      <div class="problem-card">
+        <span class="problem-icon">⏳</span>
+        <div>
+          <div class="problem-title">Nowy klient nie ma podstaw żeby Ci zaufać</div>
+          <div class="problem-desc">Dla nowego klienta firma bez profesjonalnej strony jest anonimowa. Zrealizowane projekty, opinie i historia firmy prezentowane online budują zaufanie jeszcze przed pierwszą rozmową.</div>
         </div>
       </div>
+
     </div>
   </div>
 </section>
@@ -478,7 +482,7 @@ footer{padding:28px 32px;border-top:1px solid var(--border);}
   <div class="who-inner wrap">
     <div>
       <p class="eyebrow">Dlaczego my</p>
-      <h2>Technik, który<br><em>pisze kod.</em></h2>
+      <h2>Technicy, którzy<br><em>piszą kod.</em></h2>
       <p>Posiadamy wykształcenie techniczne z dziedzin elektryki i mechatroniki. Rozumiemy specyfikę branż, dla których pracujemy — instalacje elektryczne, systemy BMS, roboty budowlane i wykończeniowe to dla nas znane pojęcia, nie żargon.</p>
       <p style="margin-top:16px;">Nie tracisz czasu na tłumaczenie nam branżowych pojęć. Rozumiemy Twój zakres usług i wiemy, jak przekazać ich wartość klientom końcowym — językiem który trafia, a nie odpycha.</p>
       <div class="who-badge">
@@ -567,7 +571,7 @@ footer{padding:28px 32px;border-top:1px solid var(--border);}
             <span class="stack-total-val">1 800 zł</span>
           </div>
           <div class="offer-price-wrap">
-            <div class="offer-price">1500 zł</div>
+            <div class="offer-price"><span style="font-size:0.45em;font-weight:400;opacity:0.6;vertical-align:middle;margin-right:4px;">od</span>1500 zł</div>
             <div class="offer-price-note">płatność etapami · 50% na start</div>
           </div>
         </div>
@@ -610,7 +614,7 @@ footer{padding:28px 32px;border-top:1px solid var(--border);}
             <span class="stack-total-val">2 900 zł</span>
           </div>
           <div class="offer-price-wrap">
-            <div class="offer-price">2500 zł</div>
+            <div class="offer-price"><span style="font-size:0.45em;font-weight:400;opacity:0.6;vertical-align:middle;margin-right:4px;">od</span>2500 zł</div>
             <div class="offer-price-note">płatność etapami · 50% na start</div>
           </div>
         </div>
@@ -652,7 +656,7 @@ footer{padding:28px 32px;border-top:1px solid var(--border);}
             <span class="stack-total-val">1 150 zł</span>
           </div>
           <div class="offer-price-wrap">
-            <div class="offer-price">500 zł</div>
+            <div class="offer-price"><span style="font-size:0.45em;font-weight:400;opacity:0.6;vertical-align:middle;margin-right:4px;">od</span>500 zł</div>
             <div class="offer-price-note">wycena po audycie · bez zobowiązań</div>
           </div>
         </div>
@@ -863,7 +867,7 @@ footer{padding:28px 32px;border-top:1px solid var(--border);}
         </div>
         <div class="field">
           <label>Telefon lub email</label>
-          <input type="text" name="contact" required placeholder="601 234 567">
+          <input type="text" name="contact" required placeholder="123 456 789">
         </div>
       </div>
       <div class="form-row single">
