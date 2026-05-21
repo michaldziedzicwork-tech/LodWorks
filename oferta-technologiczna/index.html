@@ -117,8 +117,9 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;height:64px;background:rgba(
 .who-tech{display:flex;flex-wrap:wrap;gap:8px;margin-top:32px;padding-top:32px;border-top:1px solid var(--border);}
 .who-tech-item{font-size:12px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--ink2);padding:8px 16px;border:1px solid var(--border);border-radius:2px;}
 .who-pillars{display:grid;grid-template-columns:1fr 1fr;gap:2px;}
-.pillar{padding:36px 32px;background:var(--surface);border:1px solid var(--border);}
-.pillar-num{font-family:var(--display);font-size:52px;font-weight:900;color:var(--accent);line-height:1;margin-bottom:14px;letter-spacing:-0.02em;}
+.pillar{padding:36px 32px;background:var(--surface);border:1px solid var(--border);text-align:center;}
+.pillar-num{font-family:var(--display);font-size:52px;font-weight:900;color:var(--accent);line-height:1;margin-bottom:14px;letter-spacing:-0.02em;display:flex;align-items:center;justify-content:center;}
+.pillar-num svg{display:block;}
 .pillar-title{font-size:18px;font-weight:700;letter-spacing:0.05em;text-transform:uppercase;color:var(--ink);margin-bottom:12px;}
 .pillar-text{font-family:var(--body);font-size:18px;line-height:1.7;color:var(--ink2);}
 
@@ -483,7 +484,6 @@ footer{padding:28px 32px;border-top:1px solid var(--border);}
       <p class="eyebrow">Dlaczego my</p>
       <h2>Rozumiemy branżę,<br>dla której <em>projektujemy.</em></h2>
       <p class="who-desc">Posiadamy wykształcenie techniczne z zakresu elektryki i mechatroniki. Specyfika branż instalacyjnych, budowlanych i wykończeniowych jest nam dobrze znana — co bezpośrednio przekłada się na jakość i trafność prezentacji usług naszych klientów.</p>
-      <p class="who-desc">Nie wymagamy tłumaczenia branżowej terminologii. Rozumiemy zakres Twoich usług i wiemy, jak komunikować ich wartość w sposób zrozumiały i przekonujący dla klientów końcowych.</p>
       <div class="who-tech">
         <span class="who-tech-item">Elektryka i instalacje</span>
         <span class="who-tech-item">Branża budowlana</span>
@@ -847,7 +847,7 @@ footer{padding:28px 32px;border-top:1px solid var(--border);}
     <div class="contact-header">
       <p class="eyebrow">Kontakt</p>
       <h2>Napisz.<br><em>Odpowiadamy tak szybko jak to możliwe.</em></h2>
-      <p>Wypełnij formularz lub napisz bezpośrednio na adres e-mail. Przeanalizujemy potrzeby Twojej firmy i przedstawimy konkretną wycenę.</p>
+      <p>Przeanalizujemy potrzeby Twojej firmy i przedstawimy konkretną wycenę.</p>
     </div>
     <form class="form" action="https://formspree.io/f/xlgvjrjv" method="POST">
       <div class="form-row">
