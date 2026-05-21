@@ -90,8 +90,9 @@ nav.scrolled{background:rgba(250,250,248,0.95);backdrop-filter:blur(12px);border
 .lang-btn:first-child{border-radius:3px 0 0 3px;}
 .lang-btn:last-child{border-radius:0 3px 3px 0;border-left:none;}
 .lang-btn.active{background:var(--ink);color:#fff;border-color:var(--ink);}
-.nav-offer-link{font-size:11px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--ink2);text-decoration:none;white-space:nowrap;padding:6px 0;border-bottom:1px solid transparent;transition:color 0.2s,border-color 0.2s;}
-.nav-offer-link:hover{color:var(--accent);border-color:var(--accent);}
+.nav-offer-link{font-size:11px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--ink2);text-decoration:none;white-space:nowrap;}
+.nav-offer-link:hover{color:var(--accent);}
+@media(max-width:960px){.nav-offer-link{display:none;}}
 .nav-cta{font-family:var(--ui);font-size:11px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:#fff;background:var(--accent);border:none;padding:10px 22px;border-radius:2px;cursor:none;text-decoration:none;transition:background 0.2s;}
 .nav-cta:hover{background:var(--ink);}
 
@@ -173,7 +174,7 @@ nav.scrolled{background:rgba(250,250,248,0.95);backdrop-filter:blur(12px);border
 .service-card::after{content:attr(data-num);position:absolute;bottom:-20px;right:-10px;font-family:var(--display);font-size:120px;font-weight:900;color:rgba(255,255,255,0.03);line-height:1;pointer-events:none;}
 .service-card:hover{background:#1a1a18;}
 .service-niche-link{display:inline-block;margin-top:20px;font-size:11px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--accent);text-decoration:none;opacity:0.8;}
-.service-niche-link:hover{opacity:1;text-decoration:underline;}
+.service-niche-link:hover{opacity:1;}
 .service-icon{width:44px;height:44px;border:1px solid rgba(255,255,255,0.1);border-radius:6px;display:flex;align-items:center;justify-content:center;margin-bottom:32px;}
 .service-icon svg{width:20px;height:20px;stroke:rgba(255,255,255,0.45);fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;}
 .service-title{font-family:var(--display);font-size:24px;font-weight:700;color:#fff;margin-bottom:14px;letter-spacing:-0.01em;}
@@ -186,7 +187,7 @@ nav.scrolled{background:rgba(250,250,248,0.95);backdrop-filter:blur(12px);border
 .service-price-val{font-family:var(--display);font-size:20px;font-weight:700;color:#fff;}
 
 /* PROCESS */
-.process{padding:120px 56px;}
+.process{padding:120px 56px;max-width:1600px;margin-left:auto;margin-right:auto;}
 .process-inner{display:grid;grid-template-columns:1fr 1fr;gap:100px;align-items:start;}
 .process-left{}
 .process-steps{display:flex;flex-direction:column;gap:0;margin-top:48px;}
@@ -237,8 +238,8 @@ nav.scrolled{background:rgba(250,250,248,0.95);backdrop-filter:blur(12px);border
 .product-tag{font-size:10px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:rgba(255,255,255,0.3);border:1px solid rgba(255,255,255,0.08);padding:5px 12px;border-radius:2px;}
 
 /* ABOUT */
-.about{padding:120px 56px;background:var(--surface);}
-.about-inner-cap{max-width:1600px;margin:0 auto;}
+.about{padding:120px 0;background:var(--surface);}
+.about-inner-cap{max-width:1600px;margin:0 auto;padding:0 56px;}
 .about-inner{display:grid;grid-template-columns:1fr 1fr;gap:100px;align-items:start;}
 .about-title{font-family:var(--display);font-size:clamp(36px,4vw,60px);font-weight:700;line-height:1.05;letter-spacing:-0.02em;margin-bottom:28px;}
 .about-title em{font-style:italic;color:var(--accent);}
@@ -256,7 +257,7 @@ nav.scrolled{background:rgba(250,250,248,0.95);backdrop-filter:blur(12px);border
 .about-cta:hover{color:var(--accent);border-color:var(--accent);}
 
 /* CONTACT */
-.contact{padding:120px 56px;background:var(--bg);position:relative;overflow:hidden;}
+.contact{padding:120px 56px;background:var(--bg);position:relative;overflow:hidden;max-width:1600px;margin-left:auto;margin-right:auto;}
 .contact::before{content:'HeritageStudio';position:absolute;bottom:-40px;left:160px;font-family:var(--display);font-size:clamp(80px,14vw,180px);font-weight:900;color:transparent;-webkit-text-stroke:1px var(--border);pointer-events:none;user-select:none;line-height:1;}
 .contact-inner{position:relative;z-index:1;display:grid;grid-template-columns:1fr 1fr;gap:100px;align-items:start;}
 .contact-title{font-family:var(--display);font-size:clamp(40px,5vw,76px);font-weight:900;line-height:0.95;letter-spacing:-0.03em;color:var(--ink);margin-bottom:28px;}
@@ -322,7 +323,6 @@ footer{padding:24px 56px;border-top:1px solid var(--border);display:flex;align-i
   .nav-right{gap:12px;}
   .lang-toggle{gap:0;}
   .lang-btn{padding:5px 7px;font-size:9px;}
-  .nav-offer-link{display:none;}
   .nav-cta{padding:9px 14px;font-size:10px;white-space:nowrap;}
   .hero{padding:100px 24px 60px;}
   .hero-bg-text{display:none;}
@@ -331,6 +331,7 @@ footer{padding:24px 56px;border-top:1px solid var(--border);display:flex;align-i
   .hero-stats{flex-wrap:wrap;gap:24px;}
   .hero-stat{min-width:calc(50% - 12px);border-right:none !important;padding:0 !important;}
   section{padding:80px 24px;}
+  .about-inner-cap{padding:0;}
   .services-inner-cap,.testimonials-inner-cap{padding:80px 24px;}
   .projects-header{padding:0 24px 48px;}
   .project-row{grid-template-columns:40px 1fr auto;padding:20px 24px;gap:16px;}
@@ -436,11 +437,11 @@ footer{padding:24px 56px;border-top:1px solid var(--border);display:flex;align-i
 
   <div class="hero-stats reveal" style="transition-delay:.22s">
     <div class="hero-stat">
-      <div class="hero-stat-num">2+</div>
+      <div class="hero-stat-num">3+</div>
       <div class="hero-stat-label" data-i18n="stat.exp">Lata doświadczenia</div>
     </div>
     <div class="hero-stat">
-      <div class="hero-stat-num">5+</div>
+      <div class="hero-stat-num">10+</div>
       <div class="hero-stat-label" data-i18n="stat.proj">Zrealizowanych projektów</div>
     </div>
     <div class="hero-stat">
