@@ -104,25 +104,23 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;height:64px;background:rgba(
 .problem-list{display:flex;flex-direction:column;gap:0;text-align:left;max-width:800px;margin:0 auto;}
 .problem-card{padding:44px 0;border-bottom:1px solid rgba(255,255,255,0.08);display:flex;flex-direction:column;align-items:center;text-align:center;gap:16px;}
 .problem-card:first-child{border-top:1px solid rgba(255,255,255,0.08);}
-.problem-icon{font-size:32px;}
+.problem-icon{font-size:48px;}
 .problem-title{font-family:var(--display);font-size:clamp(28px,3.5vw,42px);font-weight:700;letter-spacing:-0.02em;line-height:1.1;color:#fff;margin-bottom:14px;}
 .problem-desc{font-family:var(--body);font-size:21px;color:rgba(255,255,255,0.5);line-height:1.7;}
 
 /* ─── WHO I AM ─── */
 .who{padding:100px 0;}
-.who-inner{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;}
-.who-badge{display:inline-flex;flex-wrap:wrap;gap:8px;margin-top:28px;}
-.badge{font-size:12px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;padding:8px 16px;border:1px solid var(--border);border-radius:2px;color:var(--ink2);}
+.who-inner{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start;}
 .who h2{font-family:var(--display);font-size:clamp(40px,5vw,68px);font-weight:700;letter-spacing:-0.02em;line-height:1.05;margin-bottom:24px;}
 .who h2 em{font-style:italic;color:var(--accent);}
-.who p{font-family:var(--body);font-size:21px;line-height:1.75;color:var(--ink2);}
-.who-right{background:var(--surface);padding:48px;border:1px solid var(--border);}
-.who-right h3{font-family:var(--display);font-size:30px;font-weight:700;letter-spacing:-0.01em;margin-bottom:32px;}
-.who-point{display:flex;align-items:flex-start;gap:18px;padding:22px 0;border-bottom:1px solid var(--border);}
-.who-point:last-child{border-bottom:none;}
-.who-point-icon{width:44px;height:44px;background:var(--bg);border:1px solid var(--border);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0;}
-.who-point-text strong{display:block;font-size:16px;font-weight:700;letter-spacing:0.05em;text-transform:uppercase;color:var(--ink);margin-bottom:8px;}
-.who-point-text span{font-family:var(--body);font-size:19px;color:var(--ink2);line-height:1.6;}
+.who-desc{font-family:var(--body);font-size:20px;line-height:1.8;color:var(--ink2);margin-bottom:16px;}
+.who-tech{display:flex;flex-wrap:wrap;gap:8px;margin-top:32px;padding-top:32px;border-top:1px solid var(--border);}
+.who-tech-item{font-size:12px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--ink2);padding:8px 16px;border:1px solid var(--border);border-radius:2px;}
+.who-pillars{display:grid;grid-template-columns:1fr 1fr;gap:2px;}
+.pillar{padding:36px 32px;background:var(--surface);border:1px solid var(--border);}
+.pillar-num{font-family:var(--display);font-size:52px;font-weight:900;color:var(--accent);line-height:1;margin-bottom:14px;letter-spacing:-0.02em;}
+.pillar-title{font-size:18px;font-weight:700;letter-spacing:0.05em;text-transform:uppercase;color:var(--ink);margin-bottom:12px;}
+.pillar-text{font-family:var(--body);font-size:18px;line-height:1.7;color:var(--ink2);}
 
 /* ─── VALUE STACK / OFFERS ─── */
 .offers{padding:100px 0;background:var(--surface);}
@@ -285,8 +283,9 @@ footer{padding:28px 32px;border-top:1px solid var(--border);}
 }
 
 /* DARK MODE FIXES */
-[data-theme="dark"] .who-right{background:#1A1A18;border-color:#2A2A28;}
-[data-theme="dark"] .who-point-icon{background:#0E0E0C;border-color:#2A2A28;}
+[data-theme="dark"] .pillar{background:#1A1A18;border-color:#2A2A28;}
+[data-theme="dark"] .who-tech-item{border-color:#2A2A28;}
+[data-theme="dark"] .who-tech{border-color:#2A2A28;}
 [data-theme="dark"] .problem-card{background:#0A0A08;}
 [data-theme="dark"] .steps{border-color:#2A2A28;}
 [data-theme="dark"] .step{border-color:#2A2A28;}
@@ -298,7 +297,7 @@ footer{padding:28px 32px;border-top:1px solid var(--border);}
 [data-theme="dark"] .offer-head{border-color:#2A2A28;}
 [data-theme="dark"] .value-row{border-color:#2A2A28;}
 [data-theme="dark"] .stack-total{border-color:#2A2A28;}
-[data-theme="dark"] .who-point{border-color:#2A2A28;}
+
 [data-theme="dark"] .step-num{color:#2A2A28;}
 [data-theme="dark"] .proof-item{border-color:#2A2A28;}
 [data-theme="dark"] .hero-proof{border-color:#2A2A28;}
@@ -394,7 +393,7 @@ footer{padding:28px 32px;border-top:1px solid var(--border);}
     </div>
 
     <h1 class="hero-title">
-      Strony internetowe <br>
+      Strony internetowa <br>
       dla firm technicznych, <br>
       <em>przynoszące zlecenia.</em>
     </h1>
@@ -440,7 +439,7 @@ footer{padding:28px 32px;border-top:1px solid var(--border);}
     <div class="problem-list">
 
       <div class="problem-card">
-        <span class="problem-icon">😤</span>
+        <span class="problem-icon">📊</span>
         <div>
           <div class="problem-title">Polecenia nie zapewniają stabilnego napływu zleceń</div>
           <div class="problem-desc">Rekomendacje od dotychczasowych klientów są wartościowe, ale niewystarczające jako jedyne źródło pozyskiwania nowych kontraktów. Profesjonalna strona buduje stały, przewidywalny kanał zapytań.</div>
@@ -448,7 +447,7 @@ footer{padding:28px 32px;border-top:1px solid var(--border);}
       </div>
 
       <div class="problem-card">
-        <span class="problem-icon">📉</span>
+        <span class="problem-icon">🔍</span>
         <div>
           <div class="problem-title">Klienci podejmują decyzje na podstawie pierwszego wrażenia online</div>
           <div class="problem-desc">Przed pierwszym kontaktem klient weryfikuje firmę w internecie. Brak strony lub niska jakość prezentacji online eliminuje firmę z procesu decyzyjnego — niezależnie od jakości wykonywanych usług.</div>
@@ -456,7 +455,7 @@ footer{padding:28px 32px;border-top:1px solid var(--border);}
       </div>
 
       <div class="problem-card">
-        <span class="problem-icon">🤦</span>
+        <span class="problem-icon">🔧</span>
         <div>
           <div class="problem-title">Twórcy stron bez zaplecza technicznego nie rozumieją Twojej branży</div>
           <div class="problem-desc">Generyczne strony tworzone bez znajomości specyfiki branż technicznych nie komunikują rzeczywistej wartości i kompetencji firmy. Efekt jest odwrotny do zamierzonego.</div>
@@ -464,7 +463,7 @@ footer{padding:28px 32px;border-top:1px solid var(--border);}
       </div>
 
       <div class="problem-card">
-        <span class="problem-icon">⏳</span>
+        <span class="problem-icon">🤝</span>
         <div>
           <div class="problem-title">Nowy klient nie ma podstaw żeby Ci zaufać</div>
           <div class="problem-desc">Dla nowego klienta firma bez profesjonalnej strony jest anonimowa. Zrealizowane projekty, opinie i historia firmy prezentowane online budują zaufanie jeszcze przed pierwszą rozmową.</div>
@@ -482,45 +481,36 @@ footer{padding:28px 32px;border-top:1px solid var(--border);}
   <div class="who-inner wrap">
     <div>
       <p class="eyebrow">Dlaczego my</p>
-      <h2>Technicy, którzy<br><em>piszą kod.</em></h2>
-      <p>Posiadamy wykształcenie techniczne z dziedzin elektryki i mechatroniki. Rozumiemy specyfikę branż, dla których pracujemy — instalacje elektryczne, systemy BMS, roboty budowlane i wykończeniowe to dla nas znane pojęcia, nie żargon.</p>
-      <p style="margin-top:16px;">Nie tracisz czasu na tłumaczenie nam branżowych pojęć. Rozumiemy Twój zakres usług i wiemy, jak przekazać ich wartość klientom końcowym — językiem który trafia, a nie odpycha.</p>
-      <div class="who-badge">
-        <span class="badge">⚡ Elektryka i instalacje</span>
-        <span class="badge">📋 Branża budowlana</span>
-        <span class="badge">🎓 Wykształcenie techniczne</span>
-        <span class="badge">💻 React · WordPress · Webflow</span>
+      <h2>Rozumiemy branżę,<br>dla której <em>projektujemy.</em></h2>
+      <p class="who-desc">Posiadamy wykształcenie techniczne z zakresu elektryki i mechatroniki. Specyfika branż instalacyjnych, budowlanych i wykończeniowych jest nam dobrze znana — co bezpośrednio przekłada się na jakość i trafność prezentacji usług naszych klientów.</p>
+      <p class="who-desc">Nie wymagamy tłumaczenia branżowej terminologii. Rozumiemy zakres Twoich usług i wiemy, jak komunikować ich wartość w sposób zrozumiały i przekonujący dla klientów końcowych.</p>
+      <div class="who-tech">
+        <span class="who-tech-item">Elektryka i instalacje</span>
+        <span class="who-tech-item">Branża budowlana</span>
+        <span class="who-tech-item">Wykończenia i remonty</span>
+        <span class="who-tech-item">React · WordPress · Webflow</span>
       </div>
     </div>
-    <div class="who-right">
-      <h3>Co dostajesz, czego inni nie dają</h3>
-      <div class="who-point">
-        <div class="who-point-icon">🎯</div>
-        <div class="who-point-text">
-          <strong>Rozumiem Twoją branżę</strong>
-          <span>Opisujemy Twoje usługi językiem który trafia do klientów końcowych — nie do innych techników.</span>
-        </div>
+    <div class="who-pillars">
+      <div class="pillar">
+        <div class="pillar-num"><svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
+        <div class="pillar-title">Szybka realizacja</div>
+        <div class="pillar-text">Pracujemy sprawnie i bez zbędnych przestojów. Termin ustalamy indywidualnie na starcie każdego projektu.</div>
       </div>
-      <div class="who-point">
-        <div class="who-point-icon">⚡</div>
-        <div class="who-point-text">
-          <strong>Jeden człowiek, zero pośredników</strong>
-          <span>Projektujemy i kodujemy bez pośredników. Rozmawiasz bezpośrednio z osobą która robi Twoją stronę.</span>
-        </div>
+      <div class="pillar">
+        <div class="pillar-num">→</div>
+        <div class="pillar-title">Zaprojektowane pod konwersję</div>
+        <div class="pillar-text">Architektura informacji, treść i elementy strony są projektowane z myślą o jednym rezultacie — skłonieniu odwiedzającego do nawiązania kontaktu.</div>
       </div>
-      <div class="who-point">
-        <div class="who-point-icon">📅</div>
-        <div class="who-point-text">
-          <strong>Gotowe w 2 tygodnie</strong>
-          <span>Nie czekasz miesiącami. Dajemy konkretny termin i go dotrzymujemy.</span>
-        </div>
+      <div class="pillar">
+        <div class="pillar-num">50/50</div>
+        <div class="pillar-title">Model płatności</div>
+        <div class="pillar-text">50% na starcie, 50% po akceptacji gotowego projektu. Przejrzyste zasady finansowe.</div>
       </div>
-      <div class="who-point">
-        <div class="who-point-icon">🔒</div>
-        <div class="who-point-text">
-          <strong>Płatność w dwóch etapach</strong>
-          <span>50% zaliczki na starcie projektu, 50% po jego zakończeniu i akceptacji. Przejrzyste zasady, bez niespodzianek.</span>
-        </div>
+      <div class="pillar">
+        <div class="pillar-num">✓</div>
+        <div class="pillar-title">Dostępni po wdrożeniu</div>
+        <div class="pillar-text">Pozostajemy w kontakcie po uruchomieniu strony. Dalsze wsparcie i rozwój wyceniamy indywidualnie.</div>
       </div>
     </div>
   </div>
@@ -695,13 +685,13 @@ footer{padding:28px 32px;border-top:1px solid var(--border);}
       <div class="step">
         <div class="step-num">03</div>
         <div class="step-title">Kodowanie</div>
-        <div class="step-text">Budujemy stronę. Na bieżąco informujemy o postępach. Możesz śledzić efekty na żywo — bez czekania na „finał".</div>
+        <div class="step-text">Budujemy stronę zgodnie z zaakceptowanym projektem. Na bieżąco informujemy o kolejnych etapach realizacji i jesteśmy dostępni na pytania.</div>
         <span class="step-time">Dni 5–12</span>
       </div>
       <div class="step">
         <div class="step-num">04</div>
         <div class="step-title">Wdrożenie</div>
-        <div class="step-text">Uruchamiamy stronę. Tłumaczymy jak z niej korzystać. Pozostajemy dostępni po wdrożeniu — nie znikamy po odbiorze płatności.</div>
+        <div class="step-text">Uruchamiamy stronę i przeprowadzamy przekazanie projektu. Omawiamy obsługę panelu i pozostajemy do dyspozycji w zakresie dalszego wsparcia.</div>
         <span class="step-time">Dzień 14</span>
       </div>
     </div>
@@ -721,7 +711,7 @@ footer{padding:28px 32px;border-top:1px solid var(--border);}
     <div class="testimonials">
       <div class="tcard">
         <div class="tcard-stars">★★★★★</div>
-        <p class="tcard-text">„Strona gotowa w 10 dni, dokładnie tak jak prosiłem. Pierwsze zapytanie przez formularz przyszło w tym samym tygodniu co wdrożenie."</p>
+        <p class="tcard-text">„Nie spodziewałem się że strona może działać tak szybko. Kilka dni po uruchomieniu dostałem pierwsze zapytanie przez formularz. Polecam."</p>
         <div class="tcard-author">
           <div class="tcard-avatar">MK</div>
           <div>
@@ -732,7 +722,7 @@ footer{padding:28px 32px;border-top:1px solid var(--border);}
       </div>
       <div class="tcard">
         <div class="tcard-stars">★★★★★</div>
-        <p class="tcard-text">„Nie trzeba było mu tłumaczyć co robimy. Sam zadał właściwe pytania i od razu wiedział jak to opisać. Inni tego nie potrafili."</p>
+        <p class="tcard-text">„Współpraca przebiegła sprawnie i bez komplikacji. Strona wyszła dokładnie tak jak chcieliśmy — i co ważne, zaczęła przynosić efekty szybciej niż oczekiwaliśmy."</p>
         <div class="tcard-author">
           <div class="tcard-avatar">PW</div>
           <div>
@@ -743,7 +733,7 @@ footer{padding:28px 32px;border-top:1px solid var(--border);}
       </div>
       <div class="tcard">
         <div class="tcard-stars">★★★★★</div>
-        <p class="tcard-text">„Miałem starą stronę z 2015 roku. Odświeżył ją szybko i w rozsądnej cenie. Teraz nie wstydzę się jej pokazać na budowie klientowi."</p>
+        <p class="tcard-text">„Stara strona odstraszała klientów, ale nie wiedziałem od czego zacząć. Całość przebiegła bezproblemowo, a nowa wersja wygląda i działa znacznie lepiej."</p>
         <div class="tcard-author">
           <div class="tcard-avatar">TN</div>
           <div>
@@ -769,10 +759,10 @@ footer{padding:28px 32px;border-top:1px solid var(--border);}
     <div class="faq-list">
       <div class="faq-item">
         <button class="faq-q" onclick="toggleFaq(this)">
-          Nie mam czasu się tym zajmować — ile czasu potrzebujesz ode mnie?
+          Nie mam czasu się tym zajmować — ile czasu potrzebujecie ode mnie?
           <span class="faq-icon">+</span>
         </button>
-        <div class="faq-a">Minimum. Potrzebuję od Ciebie: opisu firmy (możesz mówić, ja notuję), kilku zdjęć realizacji jeśli masz, i 2–3 odpowiedzi na moje pytania mailowo. Resztą zajmuję się ja. Łącznie zajmuje Ci to góra 2–3 godziny — rozłożone na 2 tygodnie.</div>
+        <div class="faq-a">Zaangażowanie z Twojej strony jest minimalne. Potrzebujemy krótkiego opisu działalności firmy, ewentualnych zdjęć realizacji oraz odpowiedzi na kilka pytań dotyczących zakresu usług. Całość nie powinna zająć więcej niż 2–3 godziny rozłożone na czas trwania projektu.</div>
       </div>
       <div class="faq-item">
         <button class="faq-q" onclick="toggleFaq(this)">
@@ -820,7 +810,7 @@ footer{padding:28px 32px;border-top:1px solid var(--border);}
   <div class="wrap-narrow">
     <p class="eyebrow">Ostatni krok</p>
     <h2>Każdy miesiąc bez strony<br>to <em>zlecenia dla konkurencji.</em></h2>
-    <p>Twoja firma zasługuje na obecność w internecie, która pracuje dla Ciebie — nie na odwrót. Zacznijmy rozmowę.</p>
+    <p>Zaprojektujemy stronę, która buduje wiarygodność Twojej firmy i generuje zapytania ofertowe. Wycena jest bezpłatna i niezobowiązująca.</p>
     <div style="display:flex;flex-direction:column;align-items:center;">
       <a href="#kontakt" class="cta-btn">
         Chcę bezpłatną wycenę teraz
@@ -857,7 +847,7 @@ footer{padding:28px 32px;border-top:1px solid var(--border);}
     <div class="contact-header">
       <p class="eyebrow">Kontakt</p>
       <h2>Napisz.<br><em>Odpowiadamy tak szybko jak to możliwe.</em></h2>
-      <p>Opisz firmę i czego potrzebujesz. Dostaniesz konkretną wycenę — nie szablon odpowiedzi z bota. Odpisujemy osobiście.</p>
+      <p>Wypełnij formularz lub napisz bezpośrednio na adres e-mail. Przeanalizujemy potrzeby Twojej firmy i przedstawimy konkretną wycenę.</p>
     </div>
     <form class="form" action="https://formspree.io/f/xlgvjrjv" method="POST">
       <div class="form-row">
@@ -867,7 +857,7 @@ footer{padding:28px 32px;border-top:1px solid var(--border);}
         </div>
         <div class="field">
           <label>Telefon lub email</label>
-          <input type="text" name="contact" required placeholder="123 456 789">
+          <input type="text" name="contact" required placeholder="601 234 567">
         </div>
       </div>
       <div class="form-row single">
