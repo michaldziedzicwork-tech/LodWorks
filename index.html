@@ -90,6 +90,8 @@ nav.scrolled{background:rgba(250,250,248,0.95);backdrop-filter:blur(12px);border
 .lang-btn:first-child{border-radius:3px 0 0 3px;}
 .lang-btn:last-child{border-radius:0 3px 3px 0;border-left:none;}
 .lang-btn.active{background:var(--ink);color:#fff;border-color:var(--ink);}
+.nav-offer-link{font-size:11px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--ink2);text-decoration:none;white-space:nowrap;padding:6px 0;border-bottom:1px solid transparent;transition:color 0.2s,border-color 0.2s;}
+.nav-offer-link:hover{color:var(--accent);border-color:var(--accent);}
 .nav-cta{font-family:var(--ui);font-size:11px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:#fff;background:var(--accent);border:none;padding:10px 22px;border-radius:2px;cursor:none;text-decoration:none;transition:background 0.2s;}
 .nav-cta:hover{background:var(--ink);}
 
@@ -170,6 +172,8 @@ nav.scrolled{background:rgba(250,250,248,0.95);backdrop-filter:blur(12px);border
 .service-card{background:var(--ink);padding:48px 40px;transition:background 0.25s;position:relative;overflow:hidden;}
 .service-card::after{content:attr(data-num);position:absolute;bottom:-20px;right:-10px;font-family:var(--display);font-size:120px;font-weight:900;color:rgba(255,255,255,0.03);line-height:1;pointer-events:none;}
 .service-card:hover{background:#1a1a18;}
+.service-niche-link{display:inline-block;margin-top:20px;font-size:11px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--accent);text-decoration:none;opacity:0.8;}
+.service-niche-link:hover{opacity:1;text-decoration:underline;}
 .service-icon{width:44px;height:44px;border:1px solid rgba(255,255,255,0.1);border-radius:6px;display:flex;align-items:center;justify-content:center;margin-bottom:32px;}
 .service-icon svg{width:20px;height:20px;stroke:rgba(255,255,255,0.45);fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;}
 .service-title{font-family:var(--display);font-size:24px;font-weight:700;color:#fff;margin-bottom:14px;letter-spacing:-0.01em;}
@@ -318,6 +322,7 @@ footer{padding:24px 56px;border-top:1px solid var(--border);display:flex;align-i
   .nav-right{gap:12px;}
   .lang-toggle{gap:0;}
   .lang-btn{padding:5px 7px;font-size:9px;}
+  .nav-offer-link{display:none;}
   .nav-cta{padding:9px 14px;font-size:10px;white-space:nowrap;}
   .hero{padding:100px 24px 60px;}
   .hero-bg-text{display:none;}
@@ -369,6 +374,7 @@ footer{padding:24px 56px;border-top:1px solid var(--border);display:flex;align-i
         <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
         <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M21 12.79A9 9 0 1 1 11.21 3a7 7 0 0 0 9.79 9.79z"/></svg>
       </button>
+      <a href="/oferta-firmy-techniczne/" class="nav-offer-link">Oferta dla firm technicznych</a>
       <a href="#contact" class="nav-cta" data-i18n="nav.cta">Wycena</a>
     </div>
   </div>
@@ -612,6 +618,7 @@ footer{padding:24px 56px;border-top:1px solid var(--border);display:flex;align-i
         <div class="service-price-label" data-i18n="s.from">Od</div>
         <div class="service-price-val" data-i18n="s1.price">2 000 zł</div>
       </div>
+      <a href="/oferta-firmy-techniczne/" class="service-niche-link">Specjalna oferta dla firm technicznych →</a>
     </div>
     <div class="service-card reveal" style="transition-delay:.08s" data-num="02">
       <div class="service-icon"><svg viewBox="0 0 24 24"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><path d="M3 6h18M16 10a4 4 0 01-8 0"/></svg></div>
